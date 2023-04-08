@@ -13,6 +13,7 @@ const routes: Routes = [
     {path:'allemployees',loadChildren:()=>import('./views/admin/allemployees/allemployees.module').then(m=>m.AllemployeesModule)},
     {path:'addemployee',loadChildren:()=>import('./views/admin/addemployee/addemployee.module').then(m=>m.AddemployeeModule)},
 
+
   ]},
 
   {path:'front',component:FrontLayoutComponent,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-addemployee',
@@ -22,9 +24,18 @@ export class AddemployeeComponent implements OnInit {
 
   };
 
-  constructor() {}
+  constructor(private employeeService: EmployeesService, private router: Router) { }
+
   ngOnInit(): void {
 
+  }
+  addEmployee(){
+    this.employeeService.addEmployee({ addEmployeeRequest: this.addEmployeeRequest })
+    .subscribe({
+      next:(employee) => {
+      this.router.navigate(['admin/allemployees']);
+      }
+    });
   }
 
 }
