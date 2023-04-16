@@ -1,0 +1,121 @@
+<div class="container my-5">
+  <h1 class="mb-3">Modifier Employe</h1>
+  <div class="row">
+    <div class="col-8">
+
+      <form #form="ngForm" (ngSubmit)="updateEmployee()">
+
+        <!--<div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nom">Id</label>
+                <input type="text" class="form-control" id="employee_id" readonly
+                    name="employee_id" [(ngModel)] ="employeeDetails.employe_id">
+            </div>
+         </div>
+         </div>-->
+
+         <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom"
+                    name="nom" [(ngModel)] ="employeeDetails.nom">
+            </div>
+         </div>
+
+          <div class="col-lg-6">
+           <div class="form-group">
+              <label for="prenom">Prenom</label>
+               <input type="text" class="form-control" id="prenom"
+                 name="prenom" [(ngModel)] ="employeeDetails.prenom">
+           </div>
+          </div>
+        </div>
+
+        <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+          <label for="matricule">Matricule</label>
+          <input type="text" class="form-control" id="matricule"
+          name="matricule" [(ngModel)] ="employeeDetails.matricule">
+        </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+          <label for="matricule_resp">Matricule_Responsable</label>
+          <input type="text" class="form-control" id="matricule_resp"
+          name="matricule_resp" [(ngModel)] ="employeeDetails.matricule_resp">
+        </div>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <label for="fonction">Fonction</label>
+          <input type="text" class="form-control" id="fonction"
+          name="fonction" [(ngModel)] ="employeeDetails.fonction">
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+          <div class="form-group">
+          <label for="role">Role</label>
+          <input type="text" class="form-control" id="role"
+          name="role" [(ngModel)] ="employeeDetails.role">
+        </div>
+        </div>
+    </div>
+
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="compte_winds">Compte_winds</label>
+              <input type="text" class="form-control" id="compte_winds"
+              name="compte_winds" [(ngModel)] ="employeeDetails.compte_winds">
+        </div>
+       </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+          <label for="date_recrutement">Date_Recrutement</label>
+          <input type="text" id="date_recrutement" class="form-control form-control-alternative" placeholder="jj/mm/aa"
+          name="date_recrutement" [(ngModel)] ="employeeDetails.date_recrutement">
+        </div>
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="email">Email </label>
+              <input type="text" class="form-control" id="email"
+                name="email" [(ngModel)] ="employeeDetails.email">
+              </div>
+           </div>
+           <div class="col-lg-6">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="text" class="form-control" id="password"
+                name="password" [(ngModel)] ="employeeDetails.password">
+              </div>
+           </div>
+           </div>
+
+
+           <div class="row">
+           <div class="col-lg-6">
+            <div class="form-group">
+              <br>
+              <button type="submit" class="btn btn-primary">Edit Employee</button>
+           </div>
+         </div>
+         </div>
+       </form>
+    </div>
+ </div>
+</div>
+

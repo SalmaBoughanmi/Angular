@@ -1,68 +1,108 @@
 <div class="container my-5">
   <h1 class="mb-3">Ajout Employe</h1>
   <div class="row">
-    <div class="col-6">
+    <div class="col-8">
 
       <form #form="ngForm" (ngSubmit)="addEmployee()">
-         <div class="mb-3">
-           <label for="nom">Nom</label>
-           <input type="text" class="form-control" id="nom"
-           name="nom" [(ngModel)] ="addEmployeeRequest.nom">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom"
+                    name="nom" [(ngModel)] ="addEmployeeRequest.nom">
+            </div>
          </div>
 
-         <div class="mb-3">
-          <label for="prenom">Prenom</label>
-          <input type="text" class="form-control" id="prenom"
-          name="prenom" [(ngModel)] ="addEmployeeRequest.prenom">
+          <div class="col-lg-6">
+           <div class="form-group">
+              <label for="prenom">Prenom</label>
+               <input type="text" class="form-control" id="prenom"
+                 name="prenom" [(ngModel)] ="addEmployeeRequest.prenom">
+           </div>
+          </div>
         </div>
 
-        <div class="mb-3">
+        <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
           <label for="matricule">Matricule</label>
           <input type="text" class="form-control" id="matricule"
           name="matricule" [(ngModel)] ="addEmployeeRequest.matricule">
         </div>
+        </div>
 
-        <div class="mb-3">
+        <div class="col-lg-6">
+          <div class="form-group">
           <label for="matricule_resp">Matricule_Responsable</label>
           <input type="text" class="form-control" id="matricule_resp"
           name="matricule_resp" [(ngModel)] ="addEmployeeRequest.matricule_resp">
         </div>
+      </div>
+    </div>
 
-
-        <div class="mb-3">
+     <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
           <label for="fonction">Fonction</label>
           <input type="text" class="form-control" id="fonction"
           name="fonction" [(ngModel)] ="addEmployeeRequest.fonction">
         </div>
+      </div>
 
-
-        <div class="mb-3">
+      <div class="col-lg-6">
+          <div class="form-group">
           <label for="role">Role</label>
           <input type="text" class="form-control" id="role"
           name="role" [(ngModel)] ="addEmployeeRequest.role">
         </div>
+        </div>
+    </div>
 
 
-        <div class="mb-3">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="compte_winds">Compte_winds</label>
+              <input type="text" class="form-control" id="compte_winds"
+              name="compte_winds" [(ngModel)] ="addEmployeeRequest.compte_winds">
+        </div>
+       </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
           <label for="date_recrutement">Date_Recrutement</label>
-          <input type="text" class="form-control" id="date_recrutement"
+          <input type="text" id="date_recrutement" class="form-control form-control-alternative" placeholder="jj/mm/aa"
           name="date_recrutement" [(ngModel)] ="addEmployeeRequest.date_recrutement">
         </div>
-
-        <div class="mb-3">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" id="email"
-          name="email" [(ngModel)] ="addEmployeeRequest.email">
+        </div>
         </div>
 
-        <div class="mb-3">
-          <label for="compte_winds">Compte_winds</label>
-          <input type="text" class="form-control" id="compte_winds"
-          name="compte_winds" [(ngModel)] ="addEmployeeRequest.compte_winds">
-        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="email">Email </label>
+              <input type="text" class="form-control" id="email"
+                name="email" [(ngModel)] ="addEmployeeRequest.email">
+              </div>
+           </div>
+           <div class="col-lg-6">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="text" class="form-control" id="password"
+                name="password" [(ngModel)] ="addEmployeeRequest.password">
+              </div>
+           </div>
+           </div>
 
 
-    <button type="submit" class="btn btn-primary">Add Employee</button>
+           <div class="row">
+           <div class="col-lg-6">
+            <div class="form-group">
+              <br>
+              <button type="submit" class="btn btn-primary">Add Employee</button>
+           </div>
+         </div>
+         </div>
        </form>
     </div>
  </div>

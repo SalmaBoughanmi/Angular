@@ -5,6 +5,7 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { RouterModule } from '@angular/router';
 import { EmployeeLayoutComponent } from './employee-layout/employee-layout.component';
 import { ChefLayoutComponent } from './chef-layout/chef-layout.component';
+import { RhLayoutComponent } from './rh-layout/rh-layout.component';
 
 
 
@@ -15,6 +16,7 @@ import { ChefLayoutComponent } from './chef-layout/chef-layout.component';
     FrontLayoutComponent,
     EmployeeLayoutComponent,
     ChefLayoutComponent,
+    RhLayoutComponent,
 
   ],
   imports: [

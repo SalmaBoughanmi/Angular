@@ -23,4 +23,15 @@ addEmployee({ addEmployeeRequest }: { addEmployeeRequest: Employee; }): Observab
   addEmployeeRequest);
 }
 
+getEmployee(id: string): Observable<Employee>{
+ return this.http.get<Employee>(this.baseApiUrl + '/api/employees' + id)
+}
+
+updateEmployee(id: number, updateEmployeeRequest: Employee): Observable<Employee> {
+return this.http.put<Employee>(this.baseApiUrl + '/api/employees/'+ id,
+updateEmployeeRequest);
+}
+deleteEmployee(id:number): Observable<Employee>{
+  return this.http.delete<Employee>(this.baseApiUrl + '/api/employees' + id)
+}
 }

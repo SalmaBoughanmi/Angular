@@ -21,6 +21,11 @@ export class AddemployeeComponent implements OnInit {
     date_recrutement: '',
     email: '',
     compte_winds: '',
+    password: '' ,
+    diplomes: [],
+    experiences: [],
+    certifications: [],
+    technologies: [],
 
   };
 
@@ -33,7 +38,7 @@ export class AddemployeeComponent implements OnInit {
     this.employeeService.addEmployee({ addEmployeeRequest: this.addEmployeeRequest })
     .subscribe({
       next:(employee) => {
-      this.router.navigate(['admin/allemployees']);
+      this.router.navigate(['/admin/allemployees']);
       }
     });
   }

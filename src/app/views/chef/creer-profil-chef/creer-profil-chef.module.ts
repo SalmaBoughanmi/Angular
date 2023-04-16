@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CreerProfilChefRoutingModule } from './creer-profil-chef-routing.module';
 import { CreerProfilChefComponent } from './creer-profil-chef/creer-profil-chef.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CreerProfilChefComponent } from './creer-profil-chef/creer-profil-chef.
   ],
   imports: [
     CommonModule,
-    CreerProfilChefRoutingModule
+    CreerProfilChefRoutingModule,
+    FormsModule
   ]
 })
 export class CreerProfilChefModule { }
