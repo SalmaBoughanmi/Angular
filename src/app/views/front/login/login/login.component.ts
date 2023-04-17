@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
   selector: 'app-login',
@@ -6,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-// function
+
+employeeID: number;
 loginUsers: any [] = [];
 loginObj: any = {
   email: '',
   password:''
 }
 
-constructor() {}
+
+constructor(private localStorageService: LocalstorageService) {
+  this.employeeID = this.localStorageService.getUserID();
+}
+saveUserID() {
+  this.localStorageService.saveUserID(this.employeeID);
+}
 
 ngOnInit(): void {
 
