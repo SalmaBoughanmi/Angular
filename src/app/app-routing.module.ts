@@ -19,7 +19,7 @@ const routes: Routes = [
 
   ]},
 
-  {path:'front',component:FrontLayoutComponent,
+  {path:'',component:FrontLayoutComponent,
   children:[
     {path:'',loadChildren:()=>import('./views/front/home/home.module').then(m=>m.HomeModule)},
     //{path:'home',loadChildren:()=>import('./views/front/home/home.module').then(m=>m.HomeModule)},

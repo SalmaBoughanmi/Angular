@@ -1,6 +1,5 @@
 import { Employee } from './../../../../models/employee.model';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -29,6 +28,39 @@ export class EditemployeeComponent implements OnInit {
 
   };
 
+  constructor ( private route: ActivatedRoute, private employeeService:
+    EmployeesService, private router: Router) { }
+
+  ngOnInit(): void {
+
+      this.route.paramMap.subscribe({
+        next: (params) => {
+          const id = params.get('id');
+          if (id){
+            this.employeeService.getEmployee(id)
+            .subscribe({
+              next: (response) =>{
+                this.employeeDetails = response;
+              }
+            })
+          }
+        }
+      })
+  }
+
+  updateEmployee(){
+    this.employeeService.updateEmployee(this.employeeDetails.employe_id , this.employeeDetails)
+    .subscribe({
+      next: (response) => {
+        this.router.navigate(['/admin/allEmployees']);
+      }
+    })
+  }
+
+
+  }
+
+ // west l export :
 //editEmployee = new FormGroup({
  // nom: new FormControl(''),
  // prenom: new FormControl(''),
@@ -42,11 +74,10 @@ export class EditemployeeComponent implements OnInit {
 //});
   //employee: any;
 
-  constructor ( private route: ActivatedRoute, private employeeService:
-    EmployeesService, private router: Router) { }
 
-  ngOnInit(): void {
-    //console.log(this.route.snapshot.params['id'])
+// west l ngoninit:
+
+ //console.log(this.route.snapshot.params['id'])
    // this.employee.getEmployee(this.route.snapshot.params['id']).subscribe((result: any)=>{
       //this.editEmployee = new FormGroup({
        // nom: new FormControl(result['name']),
@@ -74,49 +105,6 @@ export class EditemployeeComponent implements OnInit {
       //});
 
 
-
-      this.route.paramMap.subscribe({
-        next: (params) => {
-          const id = params.get('id');
-          if (id){
-            this.employeeService.getEmployee(id)
-            .subscribe({
-              next: (response) =>{
-                this.employeeDetails = response;
-              }
-            })
-          }
-        }
-      })
-  }
-
-  updateEmployee(){
-    this.employeeService.updateEmployee(this.employeeDetails.employe_id , this.employeeDetails)
-    .subscribe({
-      next: (response) => {
-        this.router.navigate(['/admin/allEmployees']);
-      }
-    })
-  }
-
-  deleteEmployee(id: number){
-     this.employeeService.deleteEmployee(id)
-     .subscribe({
-      next: (response) => {
-        this.router.navigate(['/admin/allEmployees']);
-      }
-     });
-  }
-
-
-
-
-
-
-
-
-
-
   //updateEmployee()
     //this.employee.updateEmployee(this.route.snapshot.params['id'],this.editEmployee.value).subscribe((result: any)=>
      //console.log(result,"Emlpoyee mise à jour avec succès")
@@ -137,8 +125,3 @@ export class EditemployeeComponent implements OnInit {
    // });
  // }
 
-
-
-
-
-}

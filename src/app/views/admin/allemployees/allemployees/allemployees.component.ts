@@ -32,7 +32,6 @@ export class AllemployeesComponent implements OnInit {
     technologies: [],
 
   };
-
 employees: Employee[] = [];
 constructor(private employeesService: EmployeesService, private http: HttpClient , private router: Router) {}
 
@@ -46,7 +45,6 @@ constructor(private employeesService: EmployeesService, private http: HttpClient
         console.log(response);
       }
     })
-
   }
   deleteEmployee(id: number){
     this.employeesService.deleteEmployee(id)
@@ -55,8 +53,5 @@ constructor(private employeesService: EmployeesService, private http: HttpClient
        this.router.navigate(['/admin/allEmployees']);
      }
     });
-
 }
-
-
 }
