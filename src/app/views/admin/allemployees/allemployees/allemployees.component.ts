@@ -36,6 +36,9 @@ employees: Employee[] = [];
 constructor(private employeesService: EmployeesService, private http: HttpClient , private router: Router) {}
 
   ngOnInit(): void {
+    this.getAllEmployee()
+  }
+  getAllEmployee(){
     this.employeesService.getAllEmployees()
     .subscribe({
       next: (employees) => {
@@ -46,12 +49,16 @@ constructor(private employeesService: EmployeesService, private http: HttpClient
       }
     })
   }
+
+  updateEmployee(id:number){
+    this.router.navigate(['/admin/editemployee/'+id])
+  }
   deleteEmployee(id: number){
-    this.employeesService.deleteEmployee(id)
-    .subscribe({
-     next: (response) => {
-       this.router.navigate(['/admin/allEmployees']);
-     }
+
+     this.employeesService.deleteEmployee(id)
+    .subscribe((res:any)=>{
+      this.getAllEmployee()
+
     });
 }
 }

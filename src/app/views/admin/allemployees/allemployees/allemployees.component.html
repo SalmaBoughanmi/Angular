@@ -34,8 +34,8 @@
       <td>{{ employee.password }}</td>
       <td class="text-center">
         <div class="btn-group-sm btn-group" role="group">
-          <button class="btn-delete btn btn-primary"  (click)="deleteEmployee(employeeDetails.employe_id)">supprimer</button>
-          <button class="btn-edit btn btn-primary" [routerLink]="['/admin', 'editemployee' , employee.employe_id ]" click="updateEmployee(employee)">Modifier</button>
+          <button class="btn-delete btn btn-primary"  (click)="deleteEmployee(employee.employe_id)">supprimer</button>
+          <button class="btn-edit btn btn-primary" (click)="updateEmployee(employee.employe_id)">Modifier</button>
         </div>
       </td>
     </tr>
