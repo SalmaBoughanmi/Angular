@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AjoutOffreChefComponent } from './ajout-offre-chef.component';
+import { DsLayoutComponent } from './ds-layout.component';
 
-describe('AjoutOffreChefComponent', () => {
-  let component: AjoutOffreChefComponent;
-  let fixture: ComponentFixture<AjoutOffreChefComponent>;
+describe('DsLayoutComponent', () => {
+  let component: DsLayoutComponent;
+  let fixture: ComponentFixture<DsLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AjoutOffreChefComponent ]
+      declarations: [ DsLayoutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AjoutOffreChefComponent);
+    fixture = TestBed.createComponent(DsLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

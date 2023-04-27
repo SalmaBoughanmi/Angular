@@ -32,148 +32,175 @@
       }
     </style>
   </head>
-  <body class="bg-light">
+  <div class="bg-light">
     <div class="container">
   <div class="offset-md-2 col-md-8 text-center py-5">
-    <h2>Easy Job Application Filler - Options</h2>
-    <p class="lead">Enter your information below. This will be used to automatically fill out your job applications. The data will be saved to Local Storage.</p>
-    <p class="lead">Very much an MVP under development. Works on Twitter, Airtable, and Shopify careers. Have feedback? <a href="mailto:sunnyashiin@gmail.com">Send me a message.</a>
+    <h2>Demande de recrutement</h2>
   </div>
 
   <div class="row">
     <div class="offset-md-2 col-md-8 offset-md-2 order-md-1">
-      <h4 class="mb-3">Personal Information</h4>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="firstname">First name</label>
-            <input type="text" class="form-control" id="firstname" placeholder="Elon" value="" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="lastname">Last name</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Musk" value="" required>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 mb-3">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="hi@elonmusk.com">
-          </div>
-
-          <div class="col-md-12 mb-3">
-            <label for="company">Where do you work currently?</label>
-            <input type="text" class="form-control" id="company" placeholder="Tesla Inc.">
-          </div>
-
-          <div class="col-md-12 mb-3">
-          <label for="phone">Your Phone Number</label>
-          <input type="number" class="form-control" id="phone" placeholder="6474204200">
-        </div></div>
-
-
-
-        <hr class="mb-4">
-
-        <h4 class="mb-3">Social Links</h4>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="linkedin">LinkedIn URL</label>
-            <input type="text" class="form-control" id="linkedin" placeholder="https://www.linkedin.com/elonmusk">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="github">Github URL</label>
-            <input type="text" class="form-control" id="github" placeholder="https://github.com/elonmusk">
-          </div>
-
-        </div>
-
-        <div class="row">
-        <div class="col-md-6 mb-3">
-          <label for="twitter">Twitter URL</label>
-          <input type="text" class="form-control" id="twitter" placeholder="https://twitter.com/elonmusk">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label for="skype">Skype Username URL</label>
-          <input type="text" class="form-control" id="skype" placeholder="elon.musk">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label for="portfolio">Portfolio Website</label>
-          <input type="text" class="form-control" id="portfolio" placeholder="https://elonmuskthegreat.com">
-        </div>
-      </div>
-
-
-
-      <div class="card">
-                     <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                           <h4 class="card-title">Custom Color</h4>
-                        </div>
-                     </div>
-                     <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p>
-                        <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                           <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
-                           <label class="custom-control-label" for="customCheck-11">Primary </label>
-                        </div>
-                        <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                           <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
-                           <label class="custom-control-label" for="customCheck-22">Success</label>
-                        </div>
-                        <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                           <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
-                           <label class="custom-control-label" for="customCheck-33">Danger</label>
-                        </div>
-                        <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                           <input type="checkbox" class="custom-control-input bg-warning" id="customCheck-44">
-                           <label class="custom-control-label" for="customCheck-44">Warning</label>
-                        </div>
-                        <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                           <input type="checkbox" class="custom-control-input bg-dark" id="customCheck-55">
-                           <label class="custom-control-label" for="customCheck-55">Dark</label>
-                        </div>
-                        <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                           <input type="checkbox" class="custom-control-input bg-info" id="customCheck-66">
-                           <label class="custom-control-label" for="customCheck-66"> Info</label>
-                        </div>
-                     </div>
-                  </div>
-
-      <hr class="mb-4">
-
-      <h4 class="mb-3">Cover Letter</h4>
-
       <div class="row">
-        <div class="col-md-12 mb-3">
-          <label for="coverletter">Cover Letter</label>
-          <textarea class="form-control" id="coverletter" rows="10" >
-${NAME}
-${PHONE}
-${EMAIL}
-
-Dear Hiring Manager,
-In my search for new creative endeavours, I was thrilled to find the ${JOB} opening with ${COMPANY}. As an ambitious professional experienced Full Stack Developer, I believe that I would make an excellent addition to your team.
-Identifying improved approaches and enhanced solutions to business challenges are activities that drive and inspire me. Exploration, pursuit and motivation are my frameworks for success. I believe that fresh perspectives and trying new techniques help businesses evolve and grow. Like ${COMPANY}, my goal is to be on the cutting-edge of industry advancements.
-
-Contributions to my former Full Stack Developer role, and this field at-large, revolve around my essential talents in software development and product development. I have developed strong abilities in innovation and fostered a reputation as a key contributor through communication and leadership skills. As a team player, I am collaborative with peers and search for ways to integrate valuable insights. Through these qualities, I have confidence in my ability to facilitate positive change and collective effort.
-
-For a greater illustration of my background and qualifications, please review my enclosed resume. I am eager to speak with you about this opportunity and thoroughly appreciate your consideration.
-
-Sincerely,
-${NAME}
-          </textarea>
-        </div>
-      </div>
-
-        <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" id="submit" >Save Information</button>
+        <div class="col-md-6 mb-3">
+        <label for="date">Date de création </label>
+        <input type="date" onload="getDate()" class="form-control" id="date"
+          name="date">
     </div>
   </div>
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2020 SaaSBase</p>
-  </footer>
-</div>
+  <hr class="mb-4">
+
+      <h4 class="mb-3">Demandeur</h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstname">Nom</label>
+            <input type="text" class="form-control" id="firstname" placeholder="Nom" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastname">Prénom</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Prénom" value="" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="fonction">Fonction</label>
+            <input type="text" class="form-control" id="Fonction" placeholder="Fonction">
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="card">
+          <div class="card-header d-flex justify-content-between">
+             <div class="header-title">
+                <h4 class="card-title">Nuture de la demande</h4>
+             </div>
+          </div>
+          <div class="card-body">
+             <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
+                <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
+                <label class="custom-control-label" for="customCheck-11">Création</label>
+             </div>
+             <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
+                <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
+                <label class="custom-control-label" for="customCheck-22">Renforcement</label>
+             </div>
+             <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
+                <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
+                <label class="custom-control-label" for="customCheck-33">Remplacement</label>
+             </div>
+          </div>
+       </div>
+
+       <hr class="mb-4">
+
+       <div class="card">
+        <div class="card-header d-flex justify-content-between">
+           <div class="header-title">
+              <h4 class="card-title">Type de la demande</h4>
+           </div>
+        </div>
+        <div class="card-body">
+           <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
+              <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
+              <label class="custom-control-label" for="customCheck-11">Interne</label>
+           </div>
+           <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
+              <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
+              <label class="custom-control-label" for="customCheck-22">Externe</label>
+           </div>
+           <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
+              <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
+              <label class="custom-control-label" for="customCheck-33">Interne & Externe</label>
+           </div>
+        </div>
+     </div>
+
+        <hr class="mb-4">
+       <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="fonction">Titre de la fonction à pouvoir</label>
+            <input type="text" class="form-control" id="Fonction" placeholder="Titre de la fonction à pouvoir">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastname">Nombre de poste à povoir</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Nombre de poste à povoir" value="" required>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="fonction">Si remplacement nom du collaborateur remplacé</label>
+            <input type="text" class="form-control" id="Fonction" placeholder="Nom du collaborateur remplacé">
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Descriptif de la mission: Jointure la fiche fonction </h4>
+        <div class="form-check">
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Correspond exactement à la fiche fonction du :</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Nouvelle fiche fonction </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Modification de mission(s) dans la fiche fonction</label>
+          </div>
+        </div>
+      </div>
+
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3">Profil de la fonction:</h4>
+
+      <div class="input-group mb-3">
+      <div class="row">
+         <label for="lastname">Nature de contrat</label>
+          <div class="col-md-12 mb-3">
+          <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+            <option selected>Choose...</option>
+            <option value="1">CDI</option>
+            <option value="2">CDD</option>
+            <option value="3">CTT</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mb-4">
+
+
+    <h4 class="mb-3">Nombre d'année souhaité:</h4>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <input type="number" class="form-control" id="phone" placeholder="Nombre d'année souhaité">
+      </div>
+      </div>
+
+      <hr class="mb-4">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label for="coverletter">Remarque</label>
+          <textarea class="form-control" id="coverletter" rows="10" >Remarques concernant le profil ou exigences:
+          </textarea>
+        </div>
+      </div>
+      <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" id="submit" >Save Information</button>
+    </div>
 <script src="lib/jquery.min.js"></script>
 <script src="lib/popper.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>

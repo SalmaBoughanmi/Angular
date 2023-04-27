@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AjoutDemRhComponent } from './ajout-dem-rh.component';
+import { DemTraitDsComponent } from './dem-trait-ds.component';
 
-describe('AjoutDemRhComponent', () => {
-  let component: AjoutDemRhComponent;
-  let fixture: ComponentFixture<AjoutDemRhComponent>;
+describe('DemTraitDsComponent', () => {
+  let component: DemTraitDsComponent;
+  let fixture: ComponentFixture<DemTraitDsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AjoutDemRhComponent ]
+      declarations: [ DemTraitDsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AjoutDemRhComponent);
+    fixture = TestBed.createComponent(DemTraitDsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

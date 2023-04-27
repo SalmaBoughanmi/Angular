@@ -1,8 +1,8 @@
 export interface Offre {
   offre_id: number ;
-  demande_id: number ;
-  nb_poste: number ;
+  mission: string ;
   fonction: string ;
   description: string ;
-  mission: string ;
+  nb_poste: number
+
 }

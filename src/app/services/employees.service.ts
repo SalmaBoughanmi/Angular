@@ -17,12 +17,6 @@ getAllEmployees(): Observable<Employee[]> {
   return this.http.get<Employee[]>(this.baseApiUrl + '/api/employees');
 }
 
-/*addEmployee({ addEmployeeRequest }: { addEmployeeRequest: Employee; }): Observable<Employee> {
-  addEmployeeRequest.employe_id = 0 ;
-  return this.http.post<Employee>(this.baseApiUrl + '/api/employees' ,
-  addEmployeeRequest);
-}*/
-
 addEmployee({ addEmployeeRequest }: { addEmployeeRequest: Employee; }) {
   addEmployeeRequest.employe_id = 0 ;
   return this.http.post(this.baseApiUrl + '/api/employees' ,

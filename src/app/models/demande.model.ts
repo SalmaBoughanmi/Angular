@@ -1,5 +1,6 @@
 export interface Demande {
   demande_id: number ;
+  offre_id: number ;
   employee_id: number ;
   nb_a_exp: number ;
   type_demande: string ;

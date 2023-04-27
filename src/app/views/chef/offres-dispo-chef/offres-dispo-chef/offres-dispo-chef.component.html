@@ -1,47 +1,14 @@
 <div class="container-xxl flex-grow-1 container-p-y">
-
-
-  <h4 class="fw-bold py-3 mb-4">les Offres  Disponible</h4>
-
+  <h4 class="fw-bold py-3 mb-4" >les Offres  Disponibles</h4>
   <!-- Examples -->
-  <div class="row mb-5">
-    <div class="col-md-6 col-lg-4 mb-3">
-      <div class="card h-100">
-
+  <div class="row mb-5" *ngIf="offres && offres.length >0">
+    <div class="col-md-6 col-lg-4 mb-3"*ngFor="let offre of offres">
+      <div class="card h-60">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-           <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
+          <h5 class="card-title" >{{ offre.fonction }}</h5>
           <a href="javascript:void(0);" class="card-link">Voir details</a>
           <a href="javascript:void(0);" class="card-link">Postuler</a>
         </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-4 mb-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
-          <a href="javascript:void(0);" class="card-link">Voir details</a>
-          <a href="javascript:void(0);" class="card-link">Postuler</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4 mb-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-          <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
-          <a href="javascript:void(0);" class="card-link">voir details</a>
-          <a href="javascript:void(0);" class="card-link">Postuler</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Examples -->
+  </div><p *ngIf="!offres || offres.length <= 0">No Offers Found</p></div>
