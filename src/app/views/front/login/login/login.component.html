@@ -1,77 +1,86 @@
+<nav _ngcontent-c1=""
+  class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned"
+  id="navbar-main">
+  <div _ngcontent-c1="" class="container"><a _ngcontent-c1="" class="navbar-brand mr-lg-5"></a>
+    <div _ngcontent-c1="" class="navbar-collapse collapse" id="navbar_global">
+      <div class="circle"></div>
 
-
-<nav _ngcontent-c1="" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned" id="navbar-main">
-  <div _ngcontent-c1="" class="container"><a _ngcontent-c1="" class="navbar-brand mr-lg-5" ></a>
-  <div _ngcontent-c1="" class="navbar-collapse collapse" id="navbar_global"> <div class="circle"></div>
-
- </div></div></nav>
+    </div>
+  </div>
+</nav>
 
 
 <!DOCTYPE html>
-<html >
+<html>
 
 
-<body >
+<body>
 
-<div _ngcontent-c3="" class="container pt-lg-md" >
-  <div class="cercle cercle-petit" style="top: 10%; left: 5%;"></div>
-  <div _ngcontent-c3="" class="row justify-content-center">
-     <div _ngcontent-c3="" class="col-lg-5">
-        <div _ngcontent-c3="" class="card bg-secondary shadow border-0">
-           <div _ngcontent-c3="" class="card-header bg-white pb-5"><div _ngcontent-c3="" class="text-muted text-center mb-3"><small _ngcontent-c3="">Sign in </small>
-           </div>
+  <div class="container pt-lg-md">
+    <div class="cercle cercle-petit" style="top: 10%; left: 5%;"></div>
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-white pb-5">
+            <div class="text-muted text-center mb-3"><small _ngcontent-c3="">Sign in </small>
+            </div>
             <div class="cercle cercle-petit" style="top: 60%; left: 190%;"></div>
 
-        </div>
-        <div _ngcontent-c3="" class="card-body px-lg-5 py-lg-5">
-             <div class="cercle cercle-grand" style="top: 0.01%; left: 150%;"></div>
-              <form _ngcontent-c3="" novalidate="" role="form" class="ng-untouched ng-pristine ng-valid">
-                 <div _ngcontent-c3="" class="form-group mb-3"><div _ngcontent-c3="" class="input-group input-group-alternative">
-                    <div _ngcontent-c3="" class="input-group-prepend"><span _ngcontent-c3="" class="input-group-text"><i _ngcontent-c3="" class="ni ni-email-83"></i></span>
-                    </div>
-                    <input _ngcontent-c3="" class="form-control" placeholder="Email" type="email">
-                 </div>
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="cercle cercle-grand" style="top: 0.01%; left: 150%;"></div>
+            <form  role="form" class="ng-untouched ng-pristine ng-valid"  [formGroup]="myGroup" (ngSubmit)="onLogin()" >
+              <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend"><span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Email" type="email" formControlName="email">
+                </div>
 
-                  <div class="cercle cercle-grand" style="top: 50%; right: 140%;"></div>
+                <div class="cercle cercle-grand" style="top: 50%; right: 140%;"></div>
               </div>
-              <div _ngcontent-c3="" class="form-group">
-                 <div _ngcontent-c3="" class="input-group input-group-alternative">
-                    <div _ngcontent-c3="" class="input-group-prepend"><span _ngcontent-c3="" class="input-group-text"><i _ngcontent-c3="" class="ni ni-lock-circle-open"></i></span>
-                    </div>
-                    <input _ngcontent-c3="" class="form-control" placeholder="Password" type="password">
-                 </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend"><span class="input-group-text"><i
+                        class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Password" type="password" formControlName="password">
+                </div>
               </div>
-              <div _ngcontent-c3="" class="custom-control custom-control-alternative custom-checkbox"><input _ngcontent-c3="" class="custom-control-input" id=" customCheckLogin" type="checkbox"><label _ngcontent-c3="" class="custom-control-label" for=" customCheckLogin"><span _ngcontent-c3="">Remember me</span></label>
-              </div><div class="cercle cercle-petit" style="top: 120%; right: 150%;"></div>
-              <div _ngcontent-c3="" class="text-center"><button _ngcontent-c3="" class="btn btn-primary my-4" type="button" (click)="onLogin()">Login</button>
+              <div class="custom-control custom-control-alternative custom-checkbox"><input class="custom-control-input"
+                  id=" customCheckLogin" type="checkbox"><label class="custom-control-label"
+                  for=" customCheckLogin"><span _ngcontent-c3="">Remember me</span></label>
               </div>
-           </form>
+              <div class="cercle cercle-petit" style="top: 120%; right: 150%;"></div>
+              <div class="text-center">
+                <button class="btn btn-primary my-4" type="submit" >Login</button>
+              </div>
+            </form>
+          </div>
         </div>
-     </div>
-     <div class="cercle cercle-grand" style="top: 120%; left: 120%;"></div>
+        <div class="cercle cercle-grand" style="top: 120%; left: 120%;"></div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div _ngcontent-c0="" _nghost-c2="">
-<footer _ngcontent-c2="" class="footer" style=" background-color: #6495ed;"><!---->
-  <div _ngcontent-c2="" class="container">
-     <div _ngcontent-c2="" class="row row-grid align-items-center mb-5">
+  <div >
+    <footer  class="footer" style=" background-color: #6495ed;"><!---->
+      <div _ngcontent-c2="" class="container">
+        <div _ngcontent-c2="" class="row row-grid align-items-center mb-5">
 
-        <div _ngcontent-c2="" class="col-lg-6 text-lg-center btn-wrapper"><a _ngcontent-c2="" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" href="https://twitter.com/creativetim" ngbtooltip="Follow us" target="_blank"><i _ngcontent-c2="" class="fa fa-twitter"></i></a><a _ngcontent-c2="" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" href="https://www.facebook.com/creativetim" ngbtooltip="Like us" target="_blank"><i _ngcontent-c2="" class="fa fa-facebook-square"></i></a><a _ngcontent-c2="" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" href="https://dribbble.com/creativetim" ngbtooltip="Follow us" target="_blank"><i _ngcontent-c2="" class="fa fa-dribbble"></i></a><a _ngcontent-c2="" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" href="https://github.com/creativetimofficial" ngbtooltip="Star on Github" target="_blank"><i _ngcontent-c2="" class="fa fa-github"></i></a>
-        </div>
-     </div>
-     <hr _ngcontent-c2="">
-     <div _ngcontent-c2="" class="row align-items-center justify-content-md-between">
-        <div _ngcontent-c2="" class="col-md-6">
 
         </div>
-        <div _ngcontent-c2="" class="col-md-6">
 
+        <div _ngcontent-c2="" class="row align-items-center justify-content-md-between">
+          <div _ngcontent-c2="" class="col-md-6">
+
+          </div>
+          <div _ngcontent-c2="" class="col-md-6">
+
+          </div>
         </div>
-     </div>
+      </div>
+    </footer>
   </div>
-</footer></div>
-      </body>
+</body>
 
 </html>
-
