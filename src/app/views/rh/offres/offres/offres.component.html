@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <h1 class="mb-3">Offres</h1>
+<div class="table-responsive">
+<table class="table" *ngIf="offres && offres.length >0">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Fonction</th>
+      <th>Mission</th>
+      <th>Description</th>
+      <th>Type_Offre</th>
+      <th>Nb_Poste</th>
+      	<th class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let offre of offres">
+
+      <td>{{ offre.offre_id }}</td>
+      <td>{{ offre.fonction }}</td>
+      <td>{{ offre.mission }}</td>
+      <td>{{ offre.description }}</td>
+      <td>{{ offre.type_offre }}</td>
+      <td>{{ offre.nb_poste }}</td>
+
+      <td class="text-center">
+        <div class="btn-group-sm btn-group" role="group">
+          <button class="btn-delete btn btn-primary"  (click)="deleteOffre(offre.offre_id)">supprimer</button>
+          <button class="btn-edit btn btn-primary" (click)="updateOffre(offre.offre_id)">Modifier</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="!offres || offres.length <= 0">No offers Found</p>
+</div>

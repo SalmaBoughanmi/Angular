@@ -5755,7 +5755,8 @@ a.close.disabled {
   padding: 1rem 1rem;
   border-bottom: 1px solid #e3e6f0;
   border-top-left-radius: calc(.3rem - 1px);
-  border-top-right-radius: calc(.3rem - 1px)
+  border-top-right-radius: calc(.3rem - 1px);
+  background-color: #4e73df
 }
 
 .modal-header .close {
@@ -5765,7 +5766,8 @@ a.close.disabled {
 
 .modal-title {
   margin-bottom: 0;
-  line-height: 1.5
+  line-height: 1.5;
+  color:white
 }
 
 .modal-body {

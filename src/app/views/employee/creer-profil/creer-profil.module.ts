@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CreerProfilRoutingModule } from './creer-profil-routing.module';
 import { CreerProfilComponent } from './creer-profil/creer-profil.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CreerProfilRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CreerProfilModule { }

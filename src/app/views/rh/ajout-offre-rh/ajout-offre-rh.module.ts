@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AjoutOffreRhRoutingModule } from './ajout-offre-rh-routing.module';
 import { AjoutOffreRhComponent } from './ajout-offre-rh/ajout-offre-rh.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { AjoutOffreRhComponent } from './ajout-offre-rh/ajout-offre-rh.component
   ],
   imports: [
     CommonModule,
-    AjoutOffreRhRoutingModule
+    AjoutOffreRhRoutingModule,
+    FormsModule
   ]
 })
 export class AjoutOffreRhModule { }

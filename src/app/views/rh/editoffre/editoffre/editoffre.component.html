@@ -1,15 +1,26 @@
 <div class="container my-5">
-  <h1 class="mb-3">Ajout Offre</h1>
+  <h1 class="mb-3">Modifier Offre</h1>
   <div class="row">
     <div class="col-8">
 
-      <form #form="ngForm" (ngSubmit)="addOffre()">
-        <div class="row">
+      <form #form="ngForm" (ngSubmit)="updateOffre()">
+
+        <!--<div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nom">Id</label>
+                <input type="text" class="form-control" id="employee_id" readonly
+                    name="employee_id" [(ngModel)] ="employeeDetails.employe_id">
+            </div>
+         </div>
+         </div>-->
+
+         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
                 <label for="fonction">Fonction</label>
                 <input type="text" class="form-control" id="fonction"
-                    name="fonction" [(ngModel)] ="addOffreRequest.fonction">
+                    name="fonction" [(ngModel)] ="offreDetails.fonction">
             </div>
          </div>
 
@@ -17,7 +28,7 @@
            <div class="form-group">
               <label for="mission">Mission</label>
                <input type="text" class="form-control" id="mission"
-                 name="mission" [(ngModel)] ="addOffreRequest.mission">
+                 name="mission" [(ngModel)] ="offreDetails.mission">
            </div>
           </div>
         </div>
@@ -27,7 +38,7 @@
           <div class="form-group">
           <label for="description">Description</label>
           <input type="text" class="form-control" id="description"
-          name="description" [(ngModel)] ="addOffreRequest.description">
+          name="description" [(ngModel)] ="offreDetails.description">
         </div>
         </div>
 
@@ -35,7 +46,7 @@
           <div class="form-group">
           <label for="type_offre">Type_Offre</label>
           <input type="text" class="form-control" id="type_offre"
-          name="type_offre" [(ngModel)] ="addOffreRequest.type_offre">
+          name="type_offre" [(ngModel)] ="offreDetails.type_offre">
         </div>
       </div>
     </div>
@@ -43,19 +54,17 @@
      <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
-          <label for="nb_poste">Nb_Poste</label>
+          <label for="nb_poste">Nb_poste</label>
           <input type="text" class="form-control" id="nb_poste"
-          name="nb_poste" [(ngModel)] ="addOffreRequest.nb_poste">
+          name="nb_poste" [(ngModel)] ="offreDetails.nb_poste">
         </div>
       </div>
-    </div>
-
-
-           <div class="row">
+     </div>
+      <div class="row">
            <div class="col-lg-6">
             <div class="form-group">
               <br>
-              <button type="submit" class="btn btn-primary">Ajout Offre</button>
+              <button type="submit" class="btn btn-primary">Modifier Offre</button>
            </div>
          </div>
          </div>
@@ -63,3 +72,4 @@
     </div>
  </div>
 </div>
+

@@ -3,6 +3,7 @@ export interface Offre {
   mission: string ;
   fonction: string ;
   description: string ;
-  nb_poste: number
+  nb_poste: number ;
+  type_offre: string
 
 }

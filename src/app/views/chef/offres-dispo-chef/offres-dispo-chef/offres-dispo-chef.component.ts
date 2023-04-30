@@ -17,6 +17,7 @@ export class OffresDispoChefComponent implements OnInit {
     mission: '',
     fonction: '',
     description: '',
+    type_offre: '',
     nb_poste: 0,
 
   };
