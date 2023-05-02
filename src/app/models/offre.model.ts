@@ -4,6 +4,7 @@ export interface Offre {
   fonction: string ;
   description: string ;
   nb_poste: number ;
-  type_offre: string
+  type_offre: string;
+
 
 }
