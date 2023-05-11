@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { AjoutDemOffreRoutingModule } from './ajout-dem-offre-routing.module';
 import { AjoutDemOffreComponent } from './ajout-dem-offre/ajout-dem-offre.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,10 @@ import { AjoutDemOffreComponent } from './ajout-dem-offre/ajout-dem-offre.compon
   ],
   imports: [
     CommonModule,
-    AjoutDemOffreRoutingModule
-  ]
+    AjoutDemOffreRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [DatePipe]
 })
 export class AjoutDemOffreModule { }

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MesDemComponent } from './mes-dem/mes-dem.component';
 
 const routes: Routes = [
-  {path:'',component:MesDemComponent}
+  {path:':id',component:MesDemComponent}
 ];
 
 @NgModule({

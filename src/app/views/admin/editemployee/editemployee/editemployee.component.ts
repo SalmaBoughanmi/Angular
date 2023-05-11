@@ -50,11 +50,13 @@ export class EditemployeeComponent implements OnInit {
 
   updateEmployee(){
     this.employeeService.updateEmployee(this.employeeDetails.employe_id , this.employeeDetails)
-    .subscribe({
-      next: (response) => {
-        this.router.navigate(['/admin/allEmployees']);
-      }
+    .subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl("/admin/allemployees")
+    },error=>{console.log(error)
+      this.router.navigateByUrl("/admin/allemployees")
     })
+
   }
 
   }

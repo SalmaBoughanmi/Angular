@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AjoutDemOffreComponent } from './ajout-dem-offre/ajout-dem-offre.component';
+import { AjoutDemOffreChefComponent } from './ajout-dem-offre-chef/ajout-dem-offre-chef.component';
 
 const routes: Routes = [
-  {path:':id',component:AjoutDemOffreComponent}
+  {path:'',component:AjoutDemOffreChefComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AjoutDemOffreRoutingModule { }
+export class AjoutDemOffreChefRoutingModule { }

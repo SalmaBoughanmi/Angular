@@ -17,10 +17,9 @@ getOffres(): Observable<Offre[]> {
   return this.http.get<Offre[]>(this.baseApiUrl + '/api/Offre');
 }
 
-addOffre({ addOffreRequest }: { addOffreRequest: Offre; }) {
-  addOffreRequest.offre_id = 0 ;
-  return this.http.post(this.baseApiUrl + '/api/Offre' ,
-  addOffreRequest,{ responseType: 'text' });
+addOffre(body:any):Observable<any> {
+
+  return this.http.post(this.baseApiUrl + '/api/Offre',body);
 }
 
 getOffre(id: string): Observable<Offre>{
@@ -33,6 +32,10 @@ updateOffreRequest);
 }
 deleteOffre(id:number){
   return this.http.delete(this.baseApiUrl + '/api/Offre/' + id,{ responseType: 'text' })
+}
+searchoffre(body:any):Observable<any>{
+  return this.http.get(this.baseApiUrl+'/api/Offre/SearchOffre/'+body)
+
 }
 }
 

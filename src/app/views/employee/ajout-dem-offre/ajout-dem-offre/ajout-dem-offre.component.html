@@ -1,1 +1,233 @@
-<p>ajout-dem-offre works!</p>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Options - Easy Job Application Filler</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <div class="bg-light">
+    <div class="container">
+  <div class="offset-md-2 col-md-8 text-center py-5">
+    <h2>demande de postulation à une offre </h2>
+  </div>
+
+  <div class="row">
+    <div class="offset-md-2 col-md-8 offset-md-2 order-md-1">
+      <form [formGroup]="myGroup" (ngSubmit)="addrecrute()">
+     <!--<div class="row">
+        <div class="col-md-6 mb-3">
+        <label for="datecreation">Date de création </label>
+          <input type="text"  class="form-control" formControlName="date_creation" id="phone" style="    display: contents;" >
+        <input type="text" class="form-control" formControlName="date_creation" id="phone" placeholder="jj-MM-AAAA">
+
+    </div>
+  </div>-->
+
+  <hr class="mb-4">
+
+      <h4 class="mb-3">Demandeur</h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstname">Nom</label>
+            <input type="text" class="form-control"[value]="employer.nom" id="firstname" placeholder="Nom" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastname">Prénom</label>
+            <input type="text" class="form-control" [value]="employer.prenom" id="lastname" placeholder="Prénom" value="" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="fonction">Fonction</label>
+            <input type="text" class="form-control" [value]="employer.fonction" id="Fonction" placeholder="Fonction">
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="card">
+          <div class="card-header d-flex justify-content-between">
+             <div class="header-title">
+                <h4 class="card-title">Doplôme(s)</h4>
+             </div>
+          </div>
+          <div class="card-body">
+            <table class="table align-middle table-nowrap mb-0 text-center">
+              <thead class="table-light">
+                 <tr>
+                  <th> Nom Diplome</th>
+                  <th> Lieu Diplome</th>
+
+                 </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listdiplome">
+                  <td>{{item.nom_diplome}}</td>
+                  <td>{{item.lieu_diplome}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+
+       <hr class="mb-4">
+
+       <div class="card">
+        <div class="card-header d-flex justify-content-between">
+           <div class="header-title">
+              <h4 class="card-title">Certification(s)</h4>
+           </div>
+        </div>
+        <div class="card-body">
+          <table class="table align-middle table-nowrap mb-0 text-center">
+            <thead class="table-light">
+               <tr>
+                <th> Nom Certificat</th>
+
+
+               </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listcertif">
+                <td>{{item.nom_certificat}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     </div>
+
+     <hr class="mb-4">
+
+     <div class="card">
+      <div class="card-header d-flex justify-content-between">
+         <div class="header-title">
+            <h4 class="card-title">Technologie(s)</h4>
+         </div>
+      </div>
+      <div class="card-body">
+        <table class="table align-middle table-nowrap mb-0 text-center">
+          <thead class="table-light">
+             <tr>
+              <th> Nom Technologie</th>
+
+
+             </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listtechno">
+              <td>{{item.nom_techno}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   </div>
+
+   <hr class="mb-4">
+
+   <div class="card">
+    <div class="card-header d-flex justify-content-between">
+       <div class="header-title">
+          <h4 class="card-title">Expérience(s)</h4>
+       </div>
+    </div>
+    <div class="card-body">
+      <table class="table align-middle table-nowrap mb-0 text-center">
+        <thead class="table-light">
+           <tr>
+            <th> poste</th>
+            <th> date_debut</th>
+            <th> date_fin</th>
+            <th> entreprise</th>
+
+
+           </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listexper">
+            <td>{{item.poste}}</td>
+            <td>{{item.date_debut}}</td>
+            <td>{{item.date_fin}}</td>
+            <td>{{item.entreprise}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ </div>
+
+
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3">Profil de la fonction:</h4>
+
+      <div class="input-group mb-3">
+      <div class="row">
+         <label for="lastname">Nature de contrat</label>
+          <div class="col-md-12 mb-3">
+          <select class="form-select" id="inputGroupSelect03" formControlName="nature_contrat" aria-label="Example select with button addon">
+            <option selected>Choose...</option>
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="CTT">CTT</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <h4 class="mb-3">Nombre d'année souhaité:</h4>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <input type="number" class="form-control" formControlName="nb_a_exp" id="phone" placeholder="Nombre d'année souhaité">
+      </div>
+      </div>
+
+      <hr class="mb-4">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label for="coverletter">Remarque</label>
+          <textarea class="form-control" id="coverletter" formControlName="remarque" rows="10" >Remarques concernant le profil ou exigences:
+          </textarea>
+        </div>
+      </div>
+      <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" id="submit" >Save Information</button>
+      </form>
+    </div>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/popper.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="js/options.js"></script>
+

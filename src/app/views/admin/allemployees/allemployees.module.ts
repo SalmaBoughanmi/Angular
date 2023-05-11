@@ -1,3 +1,4 @@
+import { DataTablesModule } from 'angular-datatables';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { AllemployeesComponent } from './allemployees/allemployees.component';
   ],
   imports: [
     CommonModule,
-    AllemployeesRoutingModule
+    AllemployeesRoutingModule,
+    DataTablesModule
   ]
 })
 export class AllemployeesModule { }

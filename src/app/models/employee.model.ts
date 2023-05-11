@@ -19,4 +19,5 @@ export interface Employee {
   experiences: Experience [] ;
   certifications: Certification [];
   technologies: Technologie [] ;
+
 }

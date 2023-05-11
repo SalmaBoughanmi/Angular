@@ -1,5 +1,16 @@
 <div class="container-xxl flex-grow-1 container-p-y">
   <h4 class="fw-bold py-3 mb-4" >les Offres  Disponibles</h4>
+
+    <div class="col-lg-6">
+
+      <div class="hstack gap-3 mb-4">
+        <input class="form-control me-auto" type="text" placeholder="Add your item here..."  [(ngModel)]="itemsearch" aria-label="Add your item here...">
+        <button type="button" (click)="search()" class="btn btn-secondary">Submit</button>
+        <button type="button" (click)="annule()" class="btn btn-secondary">cancel</button>
+
+    </div>
+    </div>
+
   <!-- Examples -->
   <div class="row mb-5" *ngIf="offres && offres.length >0">
     <div class="col-md-6 col-lg-4 mb-3"*ngFor="let offre of offres">
@@ -7,7 +18,7 @@
         <div class="card-body">
           <h5 class="card-title" >{{ offre.fonction }}</h5>
           <a href="javascript:void(0);" class="card-link">Voir details</a>
-          <a href="javascript:void(0);" class="card-link">Postuler</a>
+          <a (click)="goto(offre.offre_id)" class="card-link">Postuler</a>
         </div>
       </div>
     </div>

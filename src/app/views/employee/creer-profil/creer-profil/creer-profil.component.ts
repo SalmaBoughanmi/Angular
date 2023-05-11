@@ -102,7 +102,7 @@ Swal.fire({
   timer: 3000
 })
   })
-  this.diplomesForm.reset()
+  this.myDiplomeForm.reset()
 
 }
 
@@ -123,7 +123,7 @@ Swal.fire({
   timer: 3000
 })
   })
-  this.certifsForm.reset()
+  this.myCertifForm.reset()
 
 }
 
@@ -145,7 +145,7 @@ Swal.fire({
   timer: 3000
 })
   })
-  this.technosForm.reset()
+  this.myTechnoForm.reset()
 
 }
 
@@ -170,7 +170,7 @@ Swal.fire({
   timer: 3000
 })
   })
-  this.expsForm.reset()
+  this.myExperienceForm.reset()
 
 }
 

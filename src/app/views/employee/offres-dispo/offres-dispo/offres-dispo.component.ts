@@ -21,6 +21,7 @@ export class OffresDispoComponent implements OnInit{
     nb_poste: 0,
 
   };
+  itemsearch:any
   offres: Offre[] = [];
 constructor(private offresService: OffresService, private http: HttpClient , private router: Router) {}
 
@@ -37,5 +38,25 @@ getOffres(){
       console.log(response);
     }
   })
+}
+search(){
+this.offresService.searchoffre(this.itemsearch).subscribe(data=>{
+  console.log((data))
+  this.offres =data
+})
+}
+annule(){
+  this.getOffres()
+}
+goto(id:any){
+  this.offresService.getOffre(id).subscribe(data=>{console.log(data)
+    if(data.type_offre =="recruter"){
+      this.router.navigateByUrl("/employee/ajout-dem/"+id)
+    }else{
+      this.router.navigateByUrl("/employee/ajout-dem-offre/"+id)
+
+    }
+  })
+
 }
 }

@@ -16,10 +16,9 @@ export class DemandesService {
   getDemandes(): Observable<Demande[]> {
     return this.http.get<Demande[]>(this.baseApiUrl + '/api/demandes');
   }
-    addDemande({ addDemandeRequest }: { addDemandeRequest: Demande; }) {
-    addDemandeRequest.demande_id = 0 ;
-    return this.http.post(this.baseApiUrl + '/api/demandes' ,
-    addDemandeRequest,{ responseType: 'text' });
+    addDemande(body:Demande): Observable <any> {
+      console.log(body)
+    return this.http.post(this.baseApiUrl + '/api/demandes' ,body);
   }
 
   getDemande(id: string): Observable<Demande>{
