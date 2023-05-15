@@ -13,9 +13,13 @@ export class DemandesService {
 
   constructor(private http: HttpClient) { }
 
-  getDemandes(): Observable<Demande[]> {
-    return this.http.get<Demande[]>(this.baseApiUrl + '/api/demandes');
+  getAllDemandes(): Observable<Demande[]> {
+    return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes');
   }
+
+  /*getDemandes(): Observable<Demande[]> {
+    return this.http.get<Demande[]>(this.baseApiUrl + '/api/demandes');
+  }*/
     addDemande(body:Demande): Observable <any> {
       console.log(body)
     return this.http.post(this.baseApiUrl + '/api/demandes' ,body);

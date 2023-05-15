@@ -34,4 +34,10 @@ updateEmployeeRequest);
 deleteEmployee(id:number){
   return this.http.delete(this.baseApiUrl + '/api/employees/' + id,{ responseType: 'text' })
 }
+getAllmydemande(id:any){
+  console.log(id)
+  return this.http.get(this.baseApiUrl+'/api/Demandes/type/'+id)
+
 }
+}
+

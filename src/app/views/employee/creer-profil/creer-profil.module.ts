@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { CreerProfilRoutingModule } from './creer-profil-routing.module';
 import { CreerProfilComponent } from './creer-profil/creer-profil.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AjoutProfilComponent } from './ajout-profil/ajout-profil.component';
 
 
 @NgModule({
   declarations: [
-    CreerProfilComponent
+    CreerProfilComponent,
+    AjoutProfilComponent
   ],
   imports: [
     CommonModule,

@@ -1,9 +1,10 @@
-import { Employee } from "./employee.model";
+import { Employee } from 'src/app/models/employee.model';
+import { Offre } from "./offre.model";
 
 export class Demande {
   demande_id!: number ;
   offre_id!: number ;
-  employe_id!: BigInteger ;
+  employe_id!: number;
   nb_a_exp!: number ;
   type_demande!: string ;
   titre_fonction!: string ;
@@ -19,5 +20,7 @@ export class Demande {
   motif_ds!: string ;
   collaborateur_remp!: string ;
   affectation!: string ;
+  offres! : Offre  ;
+  employes! : Employee;
 
 }

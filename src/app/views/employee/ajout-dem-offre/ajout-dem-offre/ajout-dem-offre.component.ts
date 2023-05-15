@@ -1,7 +1,7 @@
 
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Demande } from 'src/app/models/demande.model';
 import { DemandesService } from 'src/app/services/demandes.service';
@@ -24,7 +24,9 @@ export class AjoutDemOffreComponent implements OnInit {
   idoffre:any
   /*datecreation:any
   datecreation2:any*/
-
+  submitted=false
+  isLoggedIn = false;
+  isLoginFailed = false;
     constructor( private employeeService: EmployeesService, private router: Router,
       private fb:FormBuilder , private route:ActivatedRoute,private demandeservice:DemandesService){
       this.idemployer=localStorage.getItem("iduser");
@@ -58,14 +60,18 @@ this.idoffre=this.route.snapshot.paramMap.get('id')
 
       })
     }
+
+    get f(){
+      return this.myGroup.controls
+    }
     addrecrute(){
 let data=this.myGroup.value
 console.log(data)
 let deman:Demande=new Demande()
-deman.statut_chef="en cours"
-deman.statut_ds="en cours"
-deman.statut_rh="en cours"
-deman.remarque=this.myGroup.value.remarque
+deman.statut_chef="en attente"
+deman.statut_ds="en attente"
+deman.statut_rh="en attente"
+deman.remarque=this.myGroup.value.remarque13
 deman.offre_id=this.idoffre
 deman.employe_id=this.idemployer
 deman.nb_a_exp=this.myGroup.value.nb_a_exp
