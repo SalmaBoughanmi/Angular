@@ -6,17 +6,26 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>Matricule</th>
+      <th>Nom</th>
+      <th>Prenom</th>
       <th class="text-center">Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let demande of demandes">
 
-      <td>{{ demande.demande_id }}</td>
+      <td>{{ demande.demande_id}}</td>
 
-      <td class="text-center">
+<!-- </tr>
+
+        <tr *ngFor="let employee of employee">
+        <td>{{ employee.matricule}}</td>
+        <td>{{ employee.nom}}</td>
+        <td>{{ employee.prenom}}</td> -->
+        <td class="text-center">
         <div class="btn-group-sm btn-group" role="group">
-          <button class="btn-delete btn btn-primary">Traiter</button>
+          <button class="btn-delete btn btn-primary" (click)="Traiter()">Traiter</button>
         </div>
       </td>
     </tr>

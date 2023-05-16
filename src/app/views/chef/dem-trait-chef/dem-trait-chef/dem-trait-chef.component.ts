@@ -1,6 +1,6 @@
 import { Offre } from 'src/app/models/offre.model';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { Demande } from 'src/app/models/demande.model';
@@ -10,7 +10,27 @@ import { Experience } from 'src/app/models/experience.model';
 import { Diplome } from 'src/app/models/diplome.model';
 import { Certification } from 'src/app/models/certification.model';
 import { Technologie } from 'src/app/models/technologie.mpdel';
-
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
+interface Employee {
+  employe_id: number;
+  nom: string;
+  prenom: string;
+  matricule: string;
+  matricule_resp: string;
+  fonction: string;
+  role: string;
+  date_recrutement: string;
+  email: string;
+  compte_winds: string;
+  password: string;
+  diplomes: Diplome [];
+  experiences: Experience [] ;
+  certifications: Certification [];
+  technologies: Technologie [] ;
+}
 @Component({
   selector: 'app-dem-trait-chef',
   templateUrl: './dem-trait-chef.component.html',
@@ -18,6 +38,8 @@ import { Technologie } from 'src/app/models/technologie.mpdel';
 })
 export class DemTraitChefComponent implements OnInit{
   baseApiUrl: string = environment.baseApiUrl;
+
+  employee : any
   dtoption: DataTables.Settings = {};
   demandeDetails: Demande = {
     demande_id: 0,
@@ -66,7 +88,9 @@ export class DemTraitChefComponent implements OnInit{
   };
   dtrigger:Subject <any>=new Subject <any>()
   demandes: Demande[] = [];
+  demande: any;
   constructor(
+    public dialog: MatDialog,
     private demandesService: DemandesService,
     private http: HttpClient,
     private router: Router
@@ -80,6 +104,26 @@ export class DemTraitChefComponent implements OnInit{
     };
     this.getAllDemandes();
   }
+  Traiter(){
+    this.dialog.open(DialogDataExampleDialog, {
+      data: {
+        animal: 'panda',
+      },
+    });
+
+
+  }
+
+  // Traiter(id:number): void{
+
+  //   this.demandesService.gettraiterchef(id, this.demande)
+  //     .subscribe(response => {
+  //       console.log('Success:', response);
+  //     }, error => {
+  //       console.log('Error:', error);
+  //     });
+
+  // }
   getAllDemandes() {
     this.demandesService.getAllDemandes().subscribe({
       next: (demandes) => {
@@ -92,4 +136,7 @@ export class DemTraitChefComponent implements OnInit{
     });
   }
 
+}
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }

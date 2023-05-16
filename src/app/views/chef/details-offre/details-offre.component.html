@@ -1,0 +1,37 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <h4 class="fw-bold py-3 mb-4" >les détails d'offre</h4>
+  <!-- Examples -->
+  <div class="row mb-5" *ngIf="offres && offres.length >0">
+    <div class="col-md-6 col-lg-4 mb-3"*ngFor="let offre of offres">
+      <div class="card h-60">
+        <div class="card-body">
+          <tr *ngFor="let offre of offres"></tr>
+          <div fxLayout="row" fxLayoutGap="6px">
+            <div class="titleStyle caracteristique-nom" fxFlex="10">
+              <b>Fonction :</b>
+          {{ offre.fonction }}
+        </div>
+        <div fxLayout="row" fxLayoutGap="6px">
+          <div class="titleStyle caracteristique-nom" fxFlex="10"
+          ><b>Mission :</b>
+          {{ offre.mission }}
+        </div>
+       </div>
+       <div fxLayout="row" fxLayoutGap="6px">
+        <div class="titleStyle caracteristique-nom" fxFlex="10"
+        >
+          <b>Description :</b> {{ offre.description }}</div>
+          </div>
+          <div fxLayout="row" fxLayoutGap="6px">
+            <div class="titleStyle caracteristique-nom" fxFlex="10"
+            >
+          <b>Nombre de Poste :</b> {{ offre.nb_poste }}
+          <div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+

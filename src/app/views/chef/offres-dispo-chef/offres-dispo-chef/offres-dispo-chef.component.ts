@@ -27,6 +27,17 @@ constructor(private offresService: OffresService, private http: HttpClient , pri
   ngOnInit(): void {
     this.getOffres()
 }
+
+Details(offre_id: number){
+  this.router.navigate(['/chef/Details-offre']
+  ,{
+    queryParams: {
+    'idOffre': offre_id,
+  }
+}
+
+  )
+}
 getOffres(){
   this.offresService.getOffres()
   .subscribe({

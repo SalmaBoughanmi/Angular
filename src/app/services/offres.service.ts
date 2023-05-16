@@ -22,8 +22,9 @@ addOffre(body:any):Observable<any> {
   return this.http.post(this.baseApiUrl + '/api/Offre',body);
 }
 
-getOffre(id: string): Observable<Offre>{
- return this.http.get<Offre>(this.baseApiUrl + '/api/Offre/' + id)
+getOffre(offre_id: string): Observable<Offre>{
+  console.log("baseeeeee",this.baseApiUrl)
+ return this.http.get<Offre>(this.baseApiUrl + '/api/Offre/' + offre_id)
 }
 
 updateOffre(id: number, updateOffreRequest: Offre): Observable<Offre> {

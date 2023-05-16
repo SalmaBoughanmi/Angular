@@ -8,9 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailsOffreComponent } from './views/chef/details-offre/details-offre.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetailsOffreComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { DataTablesModule } from 'angular-datatables';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    BrowserAnimationsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

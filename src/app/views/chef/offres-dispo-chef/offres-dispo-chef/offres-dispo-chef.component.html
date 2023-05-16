@@ -5,8 +5,9 @@
     <div class="col-md-6 col-lg-4 mb-3"*ngFor="let offre of offres">
       <div class="card h-60">
         <div class="card-body">
+          <tr *ngFor="let offre of offres"></tr>
           <h5 class="card-title" >{{ offre.fonction }}</h5>
-          <a href="javascript:void(0);" class="card-link">Voir details</a>
+          <a href="javascript:void(0);" class="card-link" (click)="Details(offre.offre_id)" routerLink="Details-offre">Voir details</a>
           <a href="javascript:void(0);" class="card-link">Postuler</a>
         </div>
       </div>

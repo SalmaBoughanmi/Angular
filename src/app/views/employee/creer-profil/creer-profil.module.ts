@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutProfilComponent } from './ajout-profil/ajout-profil.component';
 
 
+
 @NgModule({
   declarations: [
     CreerProfilComponent,

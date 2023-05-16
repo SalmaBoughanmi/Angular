@@ -31,6 +31,7 @@ const routes: Routes = [
     {path:'offres-dispo',loadChildren:()=>import('./views/employee/offres-dispo/offres-dispo.module').then(m=>m.OffresDispoModule)},
     {path:'ajout-dem',loadChildren:()=>import('./views/employee/ajout-dem/ajout-dem.module').then(m=>m.AjoutDemModule)},
     {path:'ajout-dem-offre',loadChildren:()=>import('./views/employee/ajout-dem-offre/ajout-dem-offre.module').then(m=>m.AjoutDemOffreModule)},
+
     {path:'mes-dem',loadChildren:()=>import('./views/employee/mes-dem/mes-dem.module').then(m=>m.MesDemModule)},
     {path:'notif',loadChildren:()=>import('./views/employee/notif/notif.module').then(m=>m.NotifModule)},
   ]},
@@ -43,6 +44,7 @@ const routes: Routes = [
     {path:'ajout-dem-chef',loadChildren:()=>import('./views/chef/ajout-dem-chef/ajout-dem-chef.module').then(m=>m.AjoutDemChefModule)},
     {path:'ajout-dem-offre-chef',loadChildren:()=>import('./views/chef/ajout-dem-offre-chef/ajout-dem-offre-chef.module').then(m=>m.AjoutDemOffreChefModule)},
     {path:'mes-dem-chef',loadChildren:()=>import('./views/chef/mes-dem-chef/mes-dem-chef.module').then(m=>m.MesDemChefModule)},
+    {path:'Details-offre',loadChildren:()=>import('./views/chef/details-offre/details-offre.module').then(m=>m.DetailsOffreModule)},
     {path:'notif-chef',loadChildren:()=>import('./views/chef/notif-chef/notif-chef.module').then(m=>m.NotifChefModule)},
     {path:'dem-trait-chef',loadChildren:()=>import('./views/chef/dem-trait-chef/dem-trait-chef.module').then(m=>m.DemTraitChefModule)},
   ]},
