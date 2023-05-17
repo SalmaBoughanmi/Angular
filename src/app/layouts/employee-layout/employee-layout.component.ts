@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-layout.component.css']
 })
 export class EmployeeLayoutComponent implements OnInit {
+
+
   constructor(private router:Router){}
-  ngOnInit(): void {
-   
+  ngOnInit() {
+
   }
 
   logout(){

@@ -26,6 +26,7 @@ const routes: Routes = [
 
   {path:'employee',component:EmployeeLayoutComponent,
   children:[
+    {path:'',loadChildren:()=>import('./views/employee/dash-employe/dash-employe.module').then(m=>m.DashEmployeModule)},
     {path:'creer-profil',loadChildren:()=>import('./views/employee/creer-profil/creer-profil.module').then(m=>m.CreerProfilModule)},
     {path:'voir-profil',loadChildren:()=>import('./views/employee/voir-profil/voir-profil.module').then(m=>m.VoirProfilModule)},
     {path:'offres-dispo',loadChildren:()=>import('./views/employee/offres-dispo/offres-dispo.module').then(m=>m.OffresDispoModule)},

@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLayoutComponent implements OnInit {
   constructor(private router:Router){}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+
   }
 
   logout(){

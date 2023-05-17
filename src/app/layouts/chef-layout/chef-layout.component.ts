@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class ChefLayoutComponent implements OnInit{
   constructor(private router:Router){}
   ngOnInit() {
-    
+
   }
 
   logout(){

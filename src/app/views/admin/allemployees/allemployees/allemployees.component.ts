@@ -37,7 +37,8 @@ export class AllemployeesComponent implements OnInit {
   constructor(
     private employeesService: EmployeesService,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+
   ) {}
 
   ngOnInit(): void {
