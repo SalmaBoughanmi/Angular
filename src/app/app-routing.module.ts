@@ -39,6 +39,7 @@ const routes: Routes = [
 
   {path:'chef',component:ChefLayoutComponent,
   children:[
+    {path:'',loadChildren:()=>import('./views/chef/dash-chef/dash-chef.module').then(m=>m.DashChefModule)},
     {path:'creer-profil-chef',loadChildren:()=>import('./views/chef/creer-profil-chef/creer-profil-chef.module').then(m=>m.CreerProfilChefModule)},
     {path:'voir-profil-chef',loadChildren:()=>import('./views/chef/voir-profil-chef/voir-profil-chef.module').then(m=>m.VoirProfilChefModule)},
     {path:'offres-dispo-chef',loadChildren:()=>import('./views/chef/offres-dispo-chef/offres-dispo-chef.module').then(m=>m.OffresDispoChefModule)},
@@ -52,6 +53,7 @@ const routes: Routes = [
 
   {path:'rh',component:RhLayoutComponent,
   children:[
+    {path:'',loadChildren:()=>import('./views/rh/dash-rh/dash-rh.module').then(m=>m.DashRhModule)},
     {path:'offres',loadChildren:()=>import('./views/rh/offres/offres.module').then(m=>m.OffresModule)},
     {path:'editoffre',loadChildren:()=>import('./views/rh/editoffre/editoffre.module').then(m=>m.EditoffreModule)},
     {path:'ajout-offre-rh',loadChildren:()=>import('./views/rh/ajout-offre-rh/ajout-offre-rh.module').then(m=>m.AjoutOffreRhModule)},
@@ -60,6 +62,7 @@ const routes: Routes = [
 
   {path:'ds',component:DsLayoutComponent,
   children:[
+    {path:'',loadChildren:()=>import('./views/ds/dash-ds/dash-ds.module').then(m=>m.DashDsModule)},
     {path:'dem-trait-ds',loadChildren:()=>import('./views/ds/dem-trait-ds/dem-trait-ds.module').then(m=>m.DemTraitDsModule)},
   ]},
 
