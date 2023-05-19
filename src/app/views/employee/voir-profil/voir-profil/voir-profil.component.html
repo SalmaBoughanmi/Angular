@@ -5,7 +5,7 @@
         <div class="card car-transparent">
           <div class="card-body p-0">
             <div class="profile-image position-relative">
-              <img src="../assets/images/08.jpg" alt="profile-image" class="img-fluid rounded w-100">
+              <img src="../assets/images/VP.jpg" alt="profile-image" class="img-fluid rounded w-70">
             </div>
           </div>
         </div>
@@ -80,13 +80,13 @@
                   <a data-toggle="pill" href="#profile1" role="tab" aria-selected="false" class="nav-link active show">Technologies</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile2" role="tab" aria-selected="false" class="nav-link">Certifications</a>
+                  <a data-toggle="pill" href="#profile2" role="tab" aria-selected="false" class="nav-link">Certificats</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile3" role="tab" aria-selected="false" class="nav-link">Diplomes</a>
+                  <a data-toggle="pill" href="#profile3" role="tab" aria-selected="false" class="nav-link">Diplômes</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile4" role="tab" aria-selected="false" class="nav-link">Experiences</a>
+                  <a data-toggle="pill" href="#profile4" role="tab" aria-selected="false" class="nav-link">Expériences</a>
                 </li>
                 <!--<li class="nav-item">
                   <a id="view-btn" data-toggle="pill" href="#profile5" role="tab" aria-selected="true" class="nav-link">About</a>
@@ -146,16 +146,19 @@
                           <div class="col-md-6">
                             <h6 class="mb-2">Nom diplôme : {{item.nom_diplome}}</h6>
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-4">
                             <div class="media profile-media align-items-top">
                               <div class="profile-dots border-primary mt-1"></div>
                               <div class="ml-4">
                                 <h6 class="mb-1">Lieu diplôme : {{item.lieu_diplome}}</h6>
-
                               </div>
                             </div>
                           </div>
+                          <div class="col-md-8 offset-md-10">
+                            <button type="submit" class="btn btn-danger" (click)="deleteDiplome(item)">Supprimer</button>
+                          </div>
                         </div>
+
                       </li>
 
                     </ul>

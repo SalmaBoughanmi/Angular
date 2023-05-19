@@ -89,8 +89,8 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="prenom">Prenom</label>
-                    <input type="text" id="prenom" class="form-control form-control-alternative" placeholder="Prenom"
+                    <label class="form-control-label" for="prenom">Prénom</label>
+                    <input type="text" id="prenom" class="form-control form-control-alternative" placeholder="Prénom"
                     name="prenom" formControlName="prenom">
                   </div>
                 </div>
@@ -113,13 +113,13 @@
                     <i class="fas fa-graduation-cap"></i> Diplôme
                   </button>
                   <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalcertificat">
-                    <i class="fas fa-award"></i> Certification
+                    <i class="fas fa-award"></i> Certificat
                   </button>
                   <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalTechnologie">
                     <i class="fas fa-atom"></i> Technologie
                   </button>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalExperience">
-                    <i class="fas fa-briefcase"></i> Experience
+                    <i class="fas fa-briefcase"></i> Expérience
                   </button>
                 </div>
             </div><!-- end col-->
@@ -143,21 +143,21 @@
          <div class="row">
           <div class="col-sm-6">
             <div class="mb-3">
-              <label for="nomdiplome" class="form-label"><a class="text-dark">Nom Diplome</a></label>
+              <label for="nomdiplome" class="form-label"><a class="text-dark">Nom Diplôme</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="nom_diplome" >
+            <input type="text" class="form-control" formControlName="nom_diplome"  placeholder="Nom diplôme">
           </div>
           <div class="col-sm-6">
             <div class="mb-3">
-              <label for="lieudiplome" class="form-label"><a class="text-dark">Lieu Diplome</a></label>
+              <label for="lieudiplome" class="form-label"><a class="text-dark">Lieu Diplôme</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="lieu_diplome" >
+            <input type="text" class="form-control" formControlName="lieu_diplome" placeholder="Lieu diplôme" >
           </div>
          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addDiplome()">Save </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addDiplome()">Ajouter</button>
         </div>
       </form>
       </div>
@@ -177,16 +177,16 @@
          <div class="row">
           <div class="col-sm-6">
             <div class="mb-3">
-              <label for="nomcertif" class="form-label"><a class="text-dark">Nom Certif</a></label>
+              <label for="nomcertif" class="form-label"><a class="text-dark">Nom Certificat</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="nom_certif" >
+            <input type="text" class="form-control" formControlName="nom_certif" placeholder="Nom certificat">
           </div>
 
          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addCertif()">Save </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addCertif()">Ajouter</button>
         </div>
       </form>
       </div>
@@ -197,7 +197,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Technologie</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -208,14 +208,14 @@
             <div class="mb-3">
               <label for="nomtechno" class="form-label"><a class="text-dark">Nom Technologie</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="nom_techno" >
+            <input type="text" class="form-control" formControlName="nom_techno" placeholder="Nom technologie">
           </div>
 
          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addTechnologie()">Save </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addTechnologie()">Ajouter</button>
         </div>
       </form>
       </div>
@@ -225,7 +225,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Experience</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Expérience</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -237,34 +237,34 @@
             <div class="mb-3">
               <label for="poste" class="form-label"><a class="text-dark">Poste</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="poste" >
+            <input type="text" class="form-control" formControlName="poste" placeholder="Poste">
           </div>
           <div class="col-sm-6">
             <div class="mb-3">
               <label for="entreprise" class="form-label"><a class="text-dark">Entreprise</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="entreprise" >
+            <input type="text" class="form-control" formControlName="entreprise" placeholder="Entreprise" >
           </div>
          </div>
          <hr class="my-4" />
          <div class="row">
           <div class="col-sm-6">
             <div class="mb-3">
-              <label for="date_debut" class="form-label"><a class="text-dark">Date Debut</a></label>
+              <label for="date_debut" class="form-label"><a class="text-dark">Date Début</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="date_debut" >
+            <input type="text" class="form-control" formControlName="date_debut" placeholder="jj-mm-aaaa">
           </div>
           <div class="col-sm-6">
             <div class="mb-3">
               <label for="date_fin" class="form-label"><a class="text-dark">Date Fin</a></label>
             </div>
-            <input type="text" class="form-control" formControlName="date_fin" >
+            <input type="text" class="form-control" formControlName="date_fin" placeholder="jj-mm-aaaa">
           </div>
          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addExperience()">Save </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addExperience()">Ajouter</button>
         </div>
       </form>
       </div>

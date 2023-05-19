@@ -13,4 +13,8 @@ export class DiplomeService {
   addDiplome(body:any):Observable<any>{
     return this.http.post(this.baseApiUrl+"/api/Diplome",body);
   }
+
+  deleteDiplome(id:number){
+    return this.http.delete(this.baseApiUrl + '/api/Diplome/' + id,{ responseType: 'text' })
+}
 }

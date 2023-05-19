@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DiplomeService } from 'src/app/services/diplome.service';
 import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class VoirProfilComponent implements OnInit {
   listtechno:any
   idemployer:any
   listexper:any
-    constructor( private employeeService: EmployeesService, private router: Router){
+
+    constructor( private employeeService: EmployeesService, private diplomeService: DiplomeService, private router: Router){
       this.idemployer=localStorage.getItem("iduser");
 console.log(this.idemployer)
     }
@@ -33,5 +35,13 @@ console.log(this.idemployer)
   })
 
   }
+  deleteDiplome(id: number){
+
+    this.diplomeService.deleteDiplome(id)
+   .subscribe((res:any)=>{
+     this.listdiplome()
+
+   });
+}
 
 }

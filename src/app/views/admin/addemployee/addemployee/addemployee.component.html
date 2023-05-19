@@ -23,6 +23,24 @@
         </div>
 
         <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+            <label for="matricule">Matricule</label>
+            <input type="text" class="form-control" id="matricule"
+            name="matricule" [(ngModel)] ="addEmployeeRequest.matricule">
+          </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+            <label for="matricule_resp">Matricule_Responsable</label>
+            <input type="text" class="form-control" id="matricule_resp"
+            name="matricule_resp" [(ngModel)] ="addEmployeeRequest.matricule_resp">
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
         <div class="col-lg-6">
           <div class="form-group">
           <label for="fonction">Fonction</label>
@@ -43,7 +61,7 @@
      <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
-          <label for="date_recrutement">Date recrutement</label>
+          <label for="date_recrutement">Date_Recrutement</label>
           <input type="text" id="date_recrutement" class="form-control form-control-alternative" placeholder="jj-mm-aaaa"
           name="date_recrutement" [(ngModel)] ="addEmployeeRequest.date_recrutement" >
         </div>
@@ -53,7 +71,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
-          <label for="email">Email </label>
+          <label for="email">Email</label>
           <input type="text" class="form-control" id="email"
             name="email" [(ngModel)] ="addEmployeeRequest.email" >
           </div>
