@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { OffresDispoChefRoutingModule } from './offres-dispo-chef-routing.module';
 import { OffresDispoChefComponent } from './offres-dispo-chef/offres-dispo-chef.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { OffresDispoChefComponent } from './offres-dispo-chef/offres-dispo-chef.
   ],
   imports: [
     CommonModule,
-    OffresDispoChefRoutingModule
+    OffresDispoChefRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class OffresDispoChefModule { }

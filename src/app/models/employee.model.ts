@@ -13,7 +13,6 @@ export interface Employee {
   role: string;
   date_recrutement: string;
   email: string;
-  compte_winds: string;
   password: string;
   diplomes: Diplome [];
   experiences: Experience [] ;

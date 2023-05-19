@@ -245,7 +245,6 @@ Swal.fire({
       this.matricule=data.matricule
       this.matricule_resp=data.matricule_resp
       this.email=data.email
-      this.compte_winds=data.compte_winds
 
 
     })

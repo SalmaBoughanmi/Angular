@@ -10,7 +10,7 @@ import { EmployeesService } from 'src/app/services/employees.service';
   styleUrls: ['./addemployee.component.css']
 })
 export class AddemployeeComponent implements OnInit {
-  FormEmploye! : FormGroup
+ /* FormEmploye! : FormGroup*/
   addEmployeeRequest: Employee= {
     employe_id: 0,
     nom: '',
@@ -21,7 +21,6 @@ export class AddemployeeComponent implements OnInit {
     role: '',
     date_recrutement: '',
     email: '',
-    compte_winds: '',
     password: '' ,
     diplomes: [],
     experiences: [],
@@ -35,16 +34,14 @@ export class AddemployeeComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  addEmployee(){
-    if (this.addEmployeeRequest.nom == null && this.addEmployeeRequest.prenom == null ){
-alert("test")
-    }
+ addEmployee(){
     this.employeeService.addEmployee({ addEmployeeRequest: this.addEmployeeRequest })
-    .subscribe({
-      next:(employee) => {
+    .subscribe(data=>{
+      console.log(data)
       this.router.navigateByUrl("/admin/allemployees")
-      }
-    });
-  }
+    },error=>{console.log(error)
+      this.router.navigateByUrl("/admin/allemployees")
+    })
 
+  }
 }

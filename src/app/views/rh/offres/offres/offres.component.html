@@ -4,7 +4,7 @@
 <table class="table" *ngIf="offres && offres.length >0">
   <thead>
     <tr>
-      <th>Id</th>
+      <!--<th>Id</th>-->
       <th>Fonction</th>
       <th>Mission</th>
       <th>Description</th>
@@ -16,7 +16,7 @@
   <tbody>
     <tr *ngFor="let offre of offres">
 
-      <td>{{ offre.offre_id }}</td>
+      <!--<td>{{ offre.offre_id }}</td>-->
       <td>{{ offre.fonction }}</td>
       <td>{{ offre.mission }}</td>
       <td>{{ offre.description }}</td>
@@ -24,12 +24,12 @@
       <td>{{ offre.nb_poste }}</td>
       <td class="text-center">
         <div class="btn-group-sm btn-group" role="group">
-          <button class="btn-delete btn btn-primary"  (click)="deleteOffre(offre.offre_id)">supprimer</button>
+          <button class="btn-delete btn btn-primary"  (click)="deleteOffre(offre.offre_id)">supprimer</button>&nbsp;
           <button class="btn-edit btn btn-primary" (click)="updateOffre(offre.offre_id)">Modifier</button>
         </div>
       </td>
     </tr>
   </tbody>
 </table>
-<p *ngIf="!offres || offres.length <= 0">No offers Found</p>
+<p *ngIf="!offres || offres.length <= 0">Aucune offre trouvée</p>
 </div>

@@ -42,11 +42,13 @@ export class EditoffreComponent implements OnInit{
 
   updateOffre(){
     this.offreService.updateOffre(this.offreDetails.offre_id , this.offreDetails)
-    .subscribe({
-      next: (response) => {
-        this.router.navigate(['/rh/offres']);
-      }
+    .subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl("/rh/offres")
+    },error=>{console.log(error)
+      this.router.navigateByUrl("/rh/offres")
     })
+
   }
 
 }

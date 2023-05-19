@@ -55,7 +55,7 @@ const routes: Routes = [
   children:[
     {path:'',loadChildren:()=>import('./views/rh/dash-rh/dash-rh.module').then(m=>m.DashRhModule)},
     {path:'offres',loadChildren:()=>import('./views/rh/offres/offres.module').then(m=>m.OffresModule)},
-    {path:'editoffre',loadChildren:()=>import('./views/rh/editoffre/editoffre.module').then(m=>m.EditoffreModule)},
+    {path:'editoffre/:id',loadChildren:()=>import('./views/rh/editoffre/editoffre.module').then(m=>m.EditoffreModule)},
     {path:'ajout-offre-rh',loadChildren:()=>import('./views/rh/ajout-offre-rh/ajout-offre-rh.module').then(m=>m.AjoutOffreRhModule)},
     {path:'dem-trait-rh',loadChildren:()=>import('./views/rh/dem-trait-rh/dem-trait-rh.module').then(m=>m.DemTraitRhModule)},
   ]},

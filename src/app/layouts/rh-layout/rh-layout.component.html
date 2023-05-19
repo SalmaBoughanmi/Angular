@@ -5,7 +5,7 @@
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
           <!-- Sidebar - Brand -->
-          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <a class="sidebar-brand d-flex align-items-center justify-content-center">
               <div class="sidebar-brand-icon">
                   <i class="fas fa-user-circle"></i>
               </div>
@@ -26,12 +26,12 @@
               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                   aria-expanded="true" aria-controls="collapseTwo">
                   <i class="fas fa-fw fa-cog"></i>
-                  <span>Gerer offres</span>
+                  <span>Gérer offres</span>
               </a>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                       <a class="collapse-item" routerLink="/rh/offres">Toutes les offres</a>
-                      <a class="collapse-item" routerLink="/rh/ajout-offre-rh">Ajout offre</a>
+                      <a class="collapse-item" routerLink="/rh/ajout-offre-rh">Ajouter une offre</a>
                   </div>
               </div>
           </li>
@@ -62,57 +62,20 @@
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-                   <!-- Nav Item - Alerts -->
-              <li class="nav-item dropdown no-arrow mx-1">
-                  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-bell fa-fw"></i>
-                      <!-- Counter - Alerts -->
-                      <span class="badge badge-primary badge-counter">3+</span>
-                  </a>
-                  <!-- Dropdown - Alerts -->
-                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                      aria-labelledby="alertsDropdown">
-                      <h6 class="dropdown-header">
-                          Alerts Center
-                      </h6>
-
-
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                          <div class="mr-3">
-                              <div class="icon-circle bg-warning">
-                                  <i class="fas fa-exclamation-triangle text-white"></i>
-                              </div>
-                          </div>
-                          <div>
-                              <div class="small text-gray-500">December 2, 2019</div>
-                              Spending Alert: We've noticed unusually high spending for your account.
-                          </div>
-                      </a>
-                      <a class="dropdown-item text-center small text-gray-500" routerLink="/employee/notif">Show All Alerts</a>
-                  </div>
-              </li>
-
-              <!-- Nav Item - User Information -->
+                <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Responsable RH</span>
                       <img class="img-profile rounded-circle"
-                          src="assets/theme/12.jpg">
+                          src="assets/theme/user1.png">
                   </a>
                   <!-- Dropdown - User Information -->
                   <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                       aria-labelledby="userDropdown">
-                      <a class="dropdown-item" href="#">
-                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                          Profil
-                      </a>
-
-                      <div class="dropdown-divider"></div>
                       <a class="dropdown-item" (click)="logout()" >
                           <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                          Logout
+                          Déconnexion
                       </a>
                   </div>
               </li>

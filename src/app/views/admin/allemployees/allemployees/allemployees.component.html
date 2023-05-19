@@ -1,5 +1,5 @@
 <div class="container my-5">
-  <h1 class="mb-3">Employees</h1>
+  <h1 class="mb-3">liste des employés</h1>
 
 <div class="table-responsive">
 <table datatable class="table datatable" [dtOptions]="dtoption" [dtTrigger]="dtrigger" *ngIf="employees && employees.length >0">
@@ -7,13 +7,13 @@
     <tr>
       <!--<th>Id</th>-->
       <th>Nom</th>
-      <th>Prenom</th>
+      <th>Prénom</th>
       <th>Matricule</th>
       <th>Matricule_Responsable</th>
       <th>Fonction</th>
-      <th>Role</th>
+      <th>Rôle</th>
       <th>Date_Recrutement</th>
-      <th>Compte_Winds</th>
+     <!-- <th>Compte_Winds</th>-->
       <th>Email</th>
       <!--<th>Password</th>-->
       	<th class="text-center">Actions</th>
@@ -30,7 +30,7 @@
       <td>{{ employee.fonction }}</td>
       <td>{{ employee.role }}</td>
       <td>{{ employee.date_recrutement }}</td>
-      <td>{{ employee.compte_winds }}</td>
+     <!-- <td>{{ employee.compte_winds }}</td>-->
       <td>{{ employee.email }}</td>
       <!--<td>{{ employee.password }}</td>-->
       <td class="text-center">
@@ -42,5 +42,5 @@
     </tr>
   </tbody>
 </table>
-<p *ngIf="!employees || employees.length <= 0">No Employees Found</p>
+<p *ngIf="!employees || employees.length <= 0">Aucun employé trouvé</p>
 </div>

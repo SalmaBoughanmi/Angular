@@ -19,7 +19,6 @@ export class EditemployeeComponent implements OnInit {
     role: '',
     date_recrutement: '',
     email: '',
-    compte_winds: '',
     password: '',
     diplomes: [],
     experiences: [],
