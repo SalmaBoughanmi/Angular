@@ -12,6 +12,7 @@
   </div>
 </div>
 <div class="container-fluid mt--7">
+
   <div class="row">
     <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
       <div class="card card-profile shadow">
@@ -19,7 +20,7 @@
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="javascript:void(0)">
-                <img src="assets/theme/11111.PNG" class="rounded-circle">
+                <img src="assets/theme/user1.png" class="rounded-circle">
               </a>
             </div>
           </div>
@@ -48,9 +49,6 @@
             </h3>
             <h3>
               Email:<span class="font-weight-light"> {{email}}</span>
-            </h3>
-            <h3>
-              compte Windows:<span class="font-weight-light"> {{compte_winds}}</span>
             </h3>
 
             <!--<div class="h5 font-weight-300">
@@ -91,8 +89,8 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="prenom">Prenom</label>
-                    <input type="text" id="prenom" class="form-control form-control-alternative" placeholder="Prenom"
+                    <label class="form-control-label" for="prenom">Prénom</label>
+                    <input type="text" id="prenom" class="form-control form-control-alternative" placeholder="Prénom"
                     name="prenom" formControlName="prenom">
                   </div>
                 </div>
@@ -115,13 +113,13 @@
                     <i class="fas fa-graduation-cap"></i> Diplôme
                   </button>
                   <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalcertificat">
-                    <i class="fas fa-award"></i> Certification
+                    <i class="fas fa-award"></i> Certificat
                   </button>
                   <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalTechnologie">
                     <i class="fas fa-atom"></i> Technologie
                   </button>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalExperience">
-                    <i class="fas fa-briefcase"></i> Experience
+                    <i class="fas fa-briefcase"></i> Expérience
                   </button>
                 </div>
             </div><!-- end col-->
@@ -130,199 +128,146 @@
       </div>
     </div>
   </div>
-</div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau Diplôme</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form [formGroup]="myDiplomeForm" >
-      <div class="modal-body">
-       <div class="row">
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="nomdiplome" class="form-label"><a class="text-dark">Nom Diplome</a></label>
-          </div>
-          <input type="text" class="form-control" formControlName="nom_diplome" >
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nouveau Diplôme</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="lieudiplome" class="form-label"><a class="text-dark">Lieu Diplome</a></label>
+        <form [formGroup]="myDiplomeForm" >
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="nomdiplome" class="form-label"><a class="text-dark">Nom Diplôme</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="nom_diplome"  placeholder="Nom diplôme">
           </div>
-          <input type="text" class="form-control" formControlName="lieu_diplome" >
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="lieudiplome" class="form-label"><a class="text-dark">Lieu Diplôme</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="lieu_diplome" placeholder="Lieu diplôme" >
+          </div>
+         </div>
         </div>
-       </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addDiplome()">Ajouter</button>
+        </div>
+      </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addDiplome()">Save </button>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalcertificat" tabindex="-1" role="dialog" aria-labelledby="exampleModalcertificatTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nouveau Certificat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="myCertifForm" >
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="nomcertif" class="form-label"><a class="text-dark">Nom Certificat</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="nom_certif" placeholder="Nom certificat">
+          </div>
+
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addCertif()">Ajouter</button>
+        </div>
+      </form>
       </div>
-    </form>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalTechnologie" tabindex="-1" role="dialog" aria-labelledby="exampleModalTechnologieTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Technologie</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="myTechnoForm" >
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="nomtechno" class="form-label"><a class="text-dark">Nom Technologie</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="nom_techno" placeholder="Nom technologie">
+          </div>
+
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addTechnologie()">Ajouter</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalExperience" tabindex="-1" role="dialog" aria-labelledby="exampleModalExperienceTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Expérience</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="myExperienceForm" >
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="poste" class="form-label"><a class="text-dark">Poste</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="poste" placeholder="Poste">
+          </div>
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="entreprise" class="form-label"><a class="text-dark">Entreprise</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="entreprise" placeholder="Entreprise" >
+          </div>
+         </div>
+         <hr class="my-4" />
+         <div class="row">
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="date_debut" class="form-label"><a class="text-dark">Date Début</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="date_debut" placeholder="aaaa-mm-jj">
+          </div>
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <label for="date_fin" class="form-label"><a class="text-dark">Date Fin</a></label>
+            </div>
+            <input type="text" class="form-control" formControlName="date_fin" placeholder="aaaa-mm-jj">
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addExperience()">Ajouter</button>
+        </div>
+      </form>
+      </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="exampleModalcertificat" tabindex="-1" role="dialog" aria-labelledby="exampleModalcertificatTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau Certificat</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form [formGroup]="myCertifForm" >
-      <div class="modal-body">
-       <div class="row">
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="nomcertif" class="form-label"><a class="text-dark">Nom Certif</a></label>
-          </div>
-          <input type="text" class="form-control" formControlName="nom_certif" >
-        </div>
-
-       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addCertif()">Save </button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="exampleModalTechnologie" tabindex="-1" role="dialog" aria-labelledby="exampleModalTechnologieTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Technologie</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form [formGroup]="myTechnoForm" >
-      <div class="modal-body">
-       <div class="row">
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="nomtechno" class="form-label"><a class="text-dark">Nom Technologie</a></label>
-          </div>
-          <input type="text" class="form-control" formControlName="nom_techno" >
-        </div>
-
-       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addTechnologie()">Save </button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="exampleModalExperience" tabindex="-1" role="dialog" aria-labelledby="exampleModalExperienceTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Experience</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form [formGroup]="myExperienceForm" >
-      <div class="modal-body">
-       <div class="row">
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="poste" class="form-label"><a class="text-dark">Poste</a></label>
-          </div>
-          <input type="text" class="form-control" formControlName="poste" >
-        </div>
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="entreprise" class="form-label"><a class="text-dark">Entreprise</a></label>
-          </div>
-          <input type="text" class="form-control" formControlName="entreprise" >
-        </div>
-       </div>
-       <hr class="my-4" />
-       <div class="row">
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="date_debut" class="form-label"><a class="text-dark">Date Debut</a></label>
-          </div>
-          <input type="date" class="form-control" formControlName="date_debut" >
-        </div>
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <label for="date_fin" class="form-label"><a class="text-dark">Date Fin</a></label>
-          </div>
-          <input type="date" class="form-control" formControlName="date_fin" >
-        </div>
-       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  data-dismiss="modal" (click)="addExperience()">Save </button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-<!--<div class="container">
-<div class="text">
-<form class="user">
-     <div class="form-group">
-       <label for="exampleFormControlInput1">Nom</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-     </div>
-     <div class="form-group">
-        <label for="exampleFormControlInput1">Prenom</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-     </div>
-      <h1 class="h4 text-gray-900 mb-4">Diplome :</h1>
-     <div class="form-group">
-        <label for="exampleFormControlInput1">Nom_diplome</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Lieu_diplome</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-      <h2 class="h4 text-gray-900 mb-4">Experience :</h2>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Poste</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Date_début</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Date_fin</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Entreprise</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-       <h3 class="h4 text-gray-900 mb-4">Certification :</h3>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Nom-certif</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-       <h4 class="h4 text-gray-900 mb-4">Technologie :</h4>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Nom_technologie</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <a href="#" class="btn btn-primary btn-user btn-block">
-      Creer
-    </a>
-
-  </form>
-</div>-->

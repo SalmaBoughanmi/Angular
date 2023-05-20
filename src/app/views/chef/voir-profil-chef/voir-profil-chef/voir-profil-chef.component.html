@@ -5,7 +5,7 @@
         <div class="card car-transparent">
           <div class="card-body p-0">
             <div class="profile-image position-relative">
-              <img src="../assets/images/08.jpg" alt="profile-image" class="img-fluid rounded w-100">
+              <img src="../assets/images/VP.jpg" alt="profile-image" class="img-fluid rounded w-70">
             </div>
           </div>
         </div>
@@ -77,66 +77,69 @@
             <div class="card-body">
               <ul id="profile-pills-tab" role="tablist" class="d-flex nav nav-pills mb-3 text-center profile-tab">
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile1" role="tab" aria-selected="false" class="nav-link active show">Technologies</a>
+                  <a data-toggle="pill" href="#profile1" role="tab" aria-selected="false" class="nav-link">Technologies</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile2" role="tab" aria-selected="false" class="nav-link">Certifications</a>
+                  <a data-toggle="pill" href="#profile2" role="tab" aria-selected="false" class="nav-link">Certificats</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile3" role="tab" aria-selected="false" class="nav-link">Diplomes</a>
+                  <a data-toggle="pill" href="#profile3" role="tab" aria-selected="false" class="nav-link">Diplômes</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="pill" href="#profile4" role="tab" aria-selected="false" class="nav-link">Experiences</a>
+                  <a data-toggle="pill" href="#profile4" role="tab" aria-selected="false" class="nav-link">Expériences</a>
                 </li>
                 <!--<li class="nav-item">
                   <a id="view-btn" data-toggle="pill" href="#profile5" role="tab" aria-selected="true" class="nav-link">About</a>
                 </li>-->
               </ul>
+
               <div class="profile-content tab-content">
-                <div id="profile1" class="tab-pane fade active show">
-                  <div class="row">
-                    <div class="col-lg-6" *ngFor="let item of listtechno">
-                      <ul class="list-inline p-0 m-0">
-                        <li class="mb-4">
-                          <div class="d-flex align-items-center pt-2">
-                            <img src="../assets/images/profile/service/01.png" alt="image" class="img-fluid">
-                            <div class="ml-3 w-100">
-                              <div class="media align-items-center justify-content-between">
-                                <p class="mb-0">{{item.nom_techno}}</p>
 
-                            </div>
+                <div id="profile1" class="tab-pane fade">
+                  <div class="profile-line m-0 d-flex align-items-center justify-content-between position-relative">
+                    <ul class="list-inline p-0 m-0 w-100">
+                      <li>
+
+                        <div class="row align-items-top" *ngFor="let item of listtechno">
+                          <div class="col-md-6">
+                            <h6 class="mb-2">Nom Technologie : {{item.nom_techno}}</h6>
                           </div>
+                          <div class="col-md-8 offset-md-10">
+                            <button type="submit" class="btn btn-danger" >Supprimer</button>
+                          </div>
+                          <hr class="my-4" />
                         </div>
-                        </li>
 
-                      </ul>
-                    </div>
+                      </li>
 
-
+                    </ul>
                   </div>
                 </div>
+
+
+
                 <div id="profile2" class="tab-pane fade">
-                  <div class="row">
-                    <div class="col-lg-6" *ngFor="let item of listcertif">
-                      <ul class="list-inline p-0 m-0">
-                        <li class="mb-4">
-                          <div class="d-flex align-items-center pt-2">
-                            <img src="../assets/images/profile/service/01.png" alt="image" class="img-fluid">
-                            <div class="ml-3 w-100">
-                              <div class="media align-items-center justify-content-between">
-                                <p class="mb-0">{{item.nom_certif}}</p>
+                  <div class="profile-line m-0 d-flex align-items-center justify-content-between position-relative">
+                    <ul class="list-inline p-0 m-0 w-100">
+                      <li>
 
-                            </div>
+                        <div class="row align-items-top" *ngFor="let item of listcertif">
+                          <div class="col-md-6">
+                            <h6 class="mb-2">Nom Certificat : {{item.nom_certif}}</h6>
                           </div>
+                          <div class="col-md-8 offset-md-10">
+                            <button type="submit" class="btn btn-danger" >Supprimer</button>
                           </div>
-                        </li>
+                          <hr class="my-4" />
+                        </div>
 
-                      </ul>
-                    </div>
+                      </li>
 
-
+                    </ul>
                   </div>
                 </div>
+
+
                 <div id="profile3" class="tab-pane fade">
                   <div class="profile-line m-0 d-flex align-items-center justify-content-between position-relative">
                     <ul class="list-inline p-0 m-0 w-100">
@@ -146,45 +149,67 @@
                           <div class="col-md-6">
                             <h6 class="mb-2">Nom diplôme : {{item.nom_diplome}}</h6>
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-4">
                             <div class="media profile-media align-items-top">
                               <div class="profile-dots border-primary mt-1"></div>
                               <div class="ml-4">
                                 <h6 class="mb-1">Lieu diplôme : {{item.lieu_diplome}}</h6>
-
                               </div>
                             </div>
                           </div>
+                          <div class="col-md-8 offset-md-10">
+                            <button type="submit" class="btn btn-danger" (click)="deleteDiplome(item)">Supprimer</button>
+                          </div>
+                          <hr class="my-4" />
                         </div>
+
                       </li>
 
                     </ul>
                   </div>
                 </div>
+
+
                 <div id="profile4" class="tab-pane fade">
                   <div class="profile-line m-0 d-flex align-items-center justify-content-between position-relative">
                     <ul class="list-inline p-0 m-0 w-100">
-                      <li>
-                        <div class="row align-items-top" *ngFor="let item of listexper">
-                          <div class="col-md-3">
-                            <h6 class="mb-2">date : {{item.date_debut}}</h6>
+                      <li *ngFor="let item of listexper">
+                        <div class="row align-items-top">
+                          <div class="col-md-6">
+                            <h6 class="mb-2">Poste : {{item.poste}}</h6>
                           </div>
-                          <div class="col-md-9">
+                          <div class="col-md-4">
                             <div class="media profile-media align-items-top">
                               <div class="profile-dots border-primary mt-1"></div>
                               <div class="ml-4">
-                                <h6 class="mb-1">{{item.poste}}</h6>
-                                <p class="mb-0 font-size-14">entrepris:{{item.entreprise}}</p>
-                                <p class="mb-0 font-size-14">poste:{{item.poste}}</p>
+                                <h6 class="mb-2">Entreprise : {{item.entreprise}}</h6>
                               </div>
                             </div>
                           </div>
+                          <div class="col-md-6">
+                            <h6 class="mb-2">Date Début : {{item.date_debut}}</h6>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="media profile-media align-items-top">
+                              <div class="profile-dots border-primary mt-1"></div>
+                              <div class="ml-4">
+                                <h6 class="mb-2">Date Fin : {{item.date_fin}}</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-8 offset-md-10">
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                          </div>
                         </div>
+                        <hr class="my-4" />
                       </li>
-
                     </ul>
                   </div>
                 </div>
+
+
+
+
               </div>
             </div>
           </div>

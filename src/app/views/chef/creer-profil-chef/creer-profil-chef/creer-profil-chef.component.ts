@@ -1,25 +1,23 @@
-import { Experience } from './../../../../models/experience.model';
-
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Certification } from 'src/app/models/certification.model';
 import { Diplome } from 'src/app/models/diplome.model';
-import { Employee } from 'src/app/models/employee.model';
 import { Technologie } from 'src/app/models/technologie.mpdel';
-import { CertificationService } from 'src/app/services/certification.service';
-import { DiplomeService } from 'src/app/services/diplome.service';
 import { EmployeesService } from 'src/app/services/employees.service';
-import { ExperiencesService } from 'src/app/services/experiences.service';
-import { TechnologiesService } from 'src/app/services/technologies.service';
 import Swal from 'sweetalert2';
+import { DiplomeService } from 'src/app/services/diplome.service';
+import { TechnologiesService } from 'src/app/services/technologies.service';
+import { ExperiencesService } from 'src/app/services/experiences.service';
+import { CertificationService } from 'src/app/services/certification.service';
+import { Experience } from 'src/app/models/experience.model';
 
 @Component({
-  selector: 'app-creer-profil',
+  selector: 'app-creer-profil-chef',
   templateUrl: './creer-profil-chef.component.html',
   styleUrls: ['./creer-profil-chef.component.css']
 })
-export class CreerProfilChefComponent implements OnInit {
+export class CreerProfilChefComponent  implements OnInit {
   index:any=1;
   nomemployer:any
   prenomemployer:any
@@ -50,7 +48,7 @@ this.addformDiplome();
 this.addformCertif();
 this.addformTechno();
 this.addformExp();
-this.addform()
+this.addform();
    this.getprofil()
   }
 addformDiplome(){
@@ -85,6 +83,16 @@ addformExp(){
 }
 
 addDiplome(){
+  if (this.myDiplomeForm.invalid ||this.myDiplomeForm.value.length == 0){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: 'verifier votre champs',
+      showConfirmButton: false,
+      timer: 2000
+    })
+    return;
+  }
   let data=this.myDiplomeForm.value
   console.log(data)
   let diplo:Diplome=new Diplome()
@@ -107,6 +115,16 @@ Swal.fire({
 }
 
 addCertif(){
+  if (this.myCertifForm.invalid ||this.myCertifForm.value.length == 0){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: 'verifier votre champs',
+      showConfirmButton: false,
+      timer: 2000
+    })
+    return;
+  }
   let data=this.myCertifForm.value
   console.log(data)
   let certif:Certification=new Certification()
@@ -129,6 +147,16 @@ Swal.fire({
 
 
 addTechnologie(){
+  if (this.myTechnoForm.invalid ||this.myTechnoForm.value.length == 0){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: 'verifier votre champs',
+      showConfirmButton: false,
+      timer: 2000
+    })
+    return;
+  }
   let data=this.myTechnoForm.value
   console.log(data)
   let techno:Technologie=new Technologie()
@@ -151,6 +179,16 @@ Swal.fire({
 
 
 addExperience(){
+  if (this.myExperienceForm.invalid ||this.myExperienceForm.value.length == 0){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: 'verifier votre champs',
+      showConfirmButton: false,
+      timer: 2000
+    })
+    return;
+  }
   let data=this.myExperienceForm.value
   console.log(data)
   let exp:Experience=new Experience()
@@ -169,23 +207,9 @@ Swal.fire({
   showConfirmButton: false,
   timer: 3000
 })
-this.myExperienceForm.reset()
   })
-
-
+  this.myExperienceForm.reset()
 }
-
-
-
-
-
-
-
-
-
-
-
-
   addform(){
     this.Mygroup=this.fb.group({
       nom:['', Validators.required],
@@ -197,6 +221,8 @@ this.myExperienceForm.reset()
       date_fin:['', Validators.required],
       nom_certif:['', Validators.required],
       nom_techno:['', Validators.required],
+      nom_diplome:['', Validators.required],
+      lieu_diplome:['', Validators.required],
     })
   }
   getprofil(){
@@ -214,7 +240,7 @@ this.myExperienceForm.reset()
   }
 
 
-  addEmployee(){
+ /* addEmployee(){
     // this.employeeService.addEmployee({ addEmployeeRequest: this.addEmployeeRequest })
     // .subscribe({
     //   next:(employee) => {
@@ -238,7 +264,6 @@ this.myExperienceForm.reset()
   public addTags(): void {
     this.lieudiplome.push(new FormControl());
     this.nomdiplome.push(new FormControl());
-  }
-
+  }*/
 
 }

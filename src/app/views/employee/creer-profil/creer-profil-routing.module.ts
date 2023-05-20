@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreerProfilComponent } from './creer-profil/creer-profil.component';
+
 import { AjoutProfilComponent } from './ajout-profil/ajout-profil.component';
 
 

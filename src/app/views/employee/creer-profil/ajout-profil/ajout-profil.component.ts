@@ -48,7 +48,7 @@ this.addformDiplome();
 this.addformCertif();
 this.addformTechno();
 this.addformExp();
-this.addform()
+this.addform();
    this.getprofil()
   }
 addformDiplome(){
@@ -209,20 +209,7 @@ Swal.fire({
 })
   })
   this.myExperienceForm.reset()
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
   addform(){
     this.Mygroup=this.fb.group({
       nom:['', Validators.required],
@@ -234,6 +221,8 @@ Swal.fire({
       date_fin:['', Validators.required],
       nom_certif:['', Validators.required],
       nom_techno:['', Validators.required],
+      nom_diplome:['', Validators.required],
+      lieu_diplome:['', Validators.required],
     })
   }
   getprofil(){
@@ -251,7 +240,7 @@ Swal.fire({
   }
 
 
-  addEmployee(){
+ /* addEmployee(){
     // this.employeeService.addEmployee({ addEmployeeRequest: this.addEmployeeRequest })
     // .subscribe({
     //   next:(employee) => {
@@ -275,7 +264,6 @@ Swal.fire({
   public addTags(): void {
     this.lieudiplome.push(new FormControl());
     this.nomdiplome.push(new FormControl());
-  }
-
+  }*/
 
 }
