@@ -1852,49 +1852,48 @@ pre code {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch
   }
-
   .table-responsive-sm>.table-bordered {
-      border: 0
-  }
+    border: 0
+}
 }
 
 @media (max-width: 767.98px) {
-  .table-responsive-md {
-      display:block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch
-  }
+.table-responsive-md {
+    display:block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+}
 
-  .table-responsive-md>.table-bordered {
-      border: 0
-  }
+.table-responsive-md>.table-bordered {
+    border: 0
+}
 }
 
 @media (max-width: 991.98px) {
-  .table-responsive-lg {
-      display:block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch
-  }
+.table-responsive-lg {
+    display:block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+}
 
-  .table-responsive-lg>.table-bordered {
-      border: 0
-  }
+.table-responsive-lg>.table-bordered {
+    border: 0
+}
 }
 
 @media (max-width: 1199.98px) {
-  .table-responsive-xl {
-      display:block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch
-  }
+.table-responsive-xl {
+    display:block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+}
 
-  .table-responsive-xl>.table-bordered {
-      border: 0
-  }
+.table-responsive-xl>.table-bordered {
+    border: 0
+}
 }
 
 .table-responsive {
@@ -5578,6 +5577,7 @@ a.close.disabled {
   pointer-events: none
 }
 
+
 .toast {
   flex-basis: 350px;
   max-width: 350px;
@@ -5632,7 +5632,7 @@ a.close.disabled {
   overflow-y: auto
 }
 
-.modal {
+/* .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -5642,7 +5642,7 @@ a.close.disabled {
   height: 100%;
   overflow: hidden;
   outline: 0
-}
+} */
 
 .modal-dialog {
   position: relative;

@@ -10,12 +10,10 @@ import { DatePipe } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsOffreComponent } from './views/chef/details-offre/details-offre.component';
-import { DeleteCategorieDialogComponentComponent } from './views/admin/delete-categorie-dialog-component/delete-categorie-dialog-component.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsOffreComponent,
-    DeleteCategorieDialogComponentComponent,
+    DetailsOffreComponent
 
   ],
   imports: [

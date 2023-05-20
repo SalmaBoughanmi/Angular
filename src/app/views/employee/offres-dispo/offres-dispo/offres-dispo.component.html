@@ -4,9 +4,9 @@
     <div class="col-lg-6">
 
       <div class="hstack gap-3 mb-4">
-        <input class="form-control me-auto" type="text" placeholder="Add your item here..."  [(ngModel)]="itemsearch" aria-label="Add your item here...">
-        <button type="button" (click)="search()" class="btn btn-secondary">Submit</button>
-        <button type="button" (click)="annule()" class="btn btn-secondary">cancel</button>
+        <input class="form-control me-auto" type="text" placeholder="Chercher offre ici..."  [(ngModel)]="itemsearch" aria-label="Chercher offre ici...">
+        <button type="button" (click)="search()" class="btn btn-secondary">Chercher</button>
+        <button type="button" (click)="annule()" class="btn btn-secondary">Annuler</button>
 
     </div>
     </div>
@@ -22,4 +22,4 @@
         </div>
       </div>
     </div>
-  </div><p *ngIf="!offres || offres.length <= 0">No Offers Found</p></div>
+  </div><p *ngIf="!offres || offres.length <= 0">Aucune Offre Trouvée</p></div>
