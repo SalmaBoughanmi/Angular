@@ -35,6 +35,7 @@ console.log(this.idemployer)
   })
 
   }
+
   deleteDiplome(id: number){
 
     this.diplomeService.deleteDiplome(id)
@@ -43,5 +44,7 @@ console.log(this.idemployer)
 
    });
 }
+
+
 
 }

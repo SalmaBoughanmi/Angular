@@ -14,4 +14,8 @@ export class CertificationService {
     return this.http.post(this.baseApiUrl+"/api/Certification",body);
   }
 
+  deleteCertif(id:number){
+    return this.http.delete(this.baseApiUrl + '/api/Certification/' + id,{ responseType: 'text' })
+  }
+
 }

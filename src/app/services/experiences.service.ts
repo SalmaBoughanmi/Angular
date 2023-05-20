@@ -14,4 +14,7 @@ export class ExperiencesService {
     return this.http.post(this.baseApiUrl+"/api/Experience",body);
   }
 
+  deleteExperience(id:number){
+    return this.http.delete(this.baseApiUrl + '/api/Experience/' + id,{ responseType: 'text' })
+  }
 }

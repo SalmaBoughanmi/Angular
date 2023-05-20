@@ -14,4 +14,8 @@ export class TechnologiesService {
     return this.http.post(this.baseApiUrl+"/api/Technologie",body);
   }
 
+  deleteTechnologie(id:number){
+    return this.http.delete(this.baseApiUrl + '/api/Technologie/' + id,{ responseType: 'text' })
+  }
+
 }

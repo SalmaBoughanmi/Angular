@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LocalstorageService } from 'src/app/services/localstorage.service';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -15,7 +14,7 @@ role:any ;
 
 myGroup!:FormGroup
 
-constructor(private localStorageService: LocalstorageService , private loginservice:LoginService,private router:Router , private fb:FormBuilder  ) {
+constructor( private loginservice:LoginService,private router:Router , private fb:FormBuilder  ) {
 
 }
 
