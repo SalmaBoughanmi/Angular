@@ -35,18 +35,20 @@
   <div class="bg-light">
     <div class="container">
   <div class="offset-md-2 col-md-8 text-center py-5">
-    <h2>demande de postulation à une offre </h2>
+    <h2>Demande de recrutement</h2>
   </div>
 
   <div class="row">
     <div class="offset-md-2 col-md-8 offset-md-2 order-md-1">
-      <div class="row">
+      <form [formGroup]="myGroup" (ngSubmit)="addrecrute()">
+     <!--<div class="row">
         <div class="col-md-6 mb-3">
-        <label for="date">Date de création </label>
-        <input type="date" onload="getDate()" class="form-control" id="date"
-          name="date">
+        <label for="datecreation">Date de création </label>
+          <input type="text"  class="form-control" formControlName="date_creation" id="phone" style="    display: contents;" >
+        <input type="text" class="form-control" formControlName="date_creation" id="phone" placeholder="jj-MM-AAAA">
+
     </div>
-  </div>
+  </div>-->
 
   <hr class="mb-4">
 
@@ -54,18 +56,18 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstname">Nom</label>
-            <input type="text" class="form-control" id="firstname" placeholder="Nom" value="" required>
+            <input type="text" class="form-control"[value]="employer.nom" id="firstname" placeholder="Nom" value="" required>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastname">Prénom</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Prénom" value="" required>
+            <input type="text" class="form-control" [value]="employer.prenom" id="lastname" placeholder="Prénom" value="" required>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="fonction">Fonction</label>
-            <input type="text" class="form-control" id="Fonction" placeholder="Fonction">
+            <input type="text" class="form-control" [value]="employer.fonction" id="Fonction" placeholder="Fonction">
           </div>
         </div>
 
@@ -74,22 +76,25 @@
         <div class="card">
           <div class="card-header d-flex justify-content-between">
              <div class="header-title">
-                <h4 class="card-title">Doplôme(s)</h4>
+                <h4 class="card-title">Diplôme(s)</h4>
              </div>
           </div>
           <div class="card-body">
-             <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
-                <label class="custom-control-label" for="customCheck-11">Création</label>
-             </div>
-             <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
-                <label class="custom-control-label" for="customCheck-22">Renforcement</label>
-             </div>
-             <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-                <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
-                <label class="custom-control-label" for="customCheck-33">Remplacement</label>
-             </div>
+            <table class="table align-middle table-nowrap mb-0 text-center">
+              <thead class="table-light">
+                 <tr>
+                  <th> Nom Diplome</th>
+                  <th> Lieu Diplome</th>
+
+                 </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listdiplome">
+                  <td>{{item.nom_diplome}}</td>
+                  <td>{{item.lieu_diplome}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
        </div>
 
@@ -98,22 +103,22 @@
        <div class="card">
         <div class="card-header d-flex justify-content-between">
            <div class="header-title">
-              <h4 class="card-title">Certification(s)</h4>
+              <h4 class="card-title">Certificat(s)</h4>
            </div>
         </div>
         <div class="card-body">
-           <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-              <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
-              <label class="custom-control-label" for="customCheck-11">Interne</label>
-           </div>
-           <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-              <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
-              <label class="custom-control-label" for="customCheck-22">Externe</label>
-           </div>
-           <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-              <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
-              <label class="custom-control-label" for="customCheck-33">Interne & Externe</label>
-           </div>
+          <table class="table align-middle table-nowrap mb-0 text-center">
+            <thead class="table-light">
+               <tr>
+                <th> Nom Certificat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listcertif">
+                <td>{{item.nom_certif}}</td>
+             </tr>
+            </tbody>
+          </table>
         </div>
      </div>
 
@@ -126,18 +131,21 @@
          </div>
       </div>
       <div class="card-body">
-         <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-            <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
-            <label class="custom-control-label" for="customCheck-11">Interne</label>
-         </div>
-         <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-            <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
-            <label class="custom-control-label" for="customCheck-22">Externe</label>
-         </div>
-         <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-            <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
-            <label class="custom-control-label" for="customCheck-33">Interne & Externe</label>
-         </div>
+        <table class="table align-middle table-nowrap mb-0 text-center">
+          <thead class="table-light">
+             <tr>
+              <th> Nom Technologie</th>
+
+
+             </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listtechno">
+              <td>{{item.nom_techno}}</td>
+
+            </tr>
+          </tbody>
+        </table>
       </div>
    </div>
 
@@ -150,18 +158,24 @@
        </div>
     </div>
     <div class="card-body">
-       <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-          <input type="checkbox" class="custom-control-input bg-primary" id="customCheck-11">
-          <label class="custom-control-label" for="customCheck-11">Interne</label>
-       </div>
-       <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-          <input type="checkbox" class="custom-control-input bg-success" id="customCheck-22">
-          <label class="custom-control-label" for="customCheck-22">Externe</label>
-       </div>
-       <div class="custom-control custom-checkbox custom-checkbox-color custom-control-inline">
-          <input type="checkbox" class="custom-control-input bg-danger" id="customCheck-33">
-          <label class="custom-control-label" for="customCheck-33">Interne & Externe</label>
-       </div>
+      <table class="table align-middle table-nowrap mb-0 text-center">
+        <thead class="table-light">
+           <tr>
+            <th> Poste</th>
+            <th> Entreprise</th>
+            <th> Date Début</th>
+            <th> Date Fin</th>
+           </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listexper">
+            <td>{{item.poste}}</td>
+            <td>{{item.entreprise}}</td>
+            <td>{{item.date_debut}}</td>
+            <td>{{item.date_fin}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
  </div>
 
@@ -175,11 +189,11 @@
       <div class="row">
          <label for="lastname">Nature de contrat</label>
           <div class="col-md-12 mb-3">
-          <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-            <option selected>Choose...</option>
-            <option value="1">CDI</option>
-            <option value="2">CDD</option>
-            <option value="3">CTT</option>
+          <select class="form-select" id="nature_contrat" formControlName="nature_contrat"   >
+            <option value="">-- Choisir un contrat --</option>
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="CTT">CIVP</option>
           </select>
         </div>
       </div>
@@ -187,11 +201,10 @@
 
     <hr class="mb-4">
 
-
     <h4 class="mb-3">Nombre d'année souhaité:</h4>
     <div class="row">
       <div class="col-md-6 mb-3">
-        <input type="number" class="form-control" id="phone" placeholder="Nombre d'année souhaité">
+        <input type="number" class="form-control" formControlName="nb_a_exp" id="nb_a_exp" placeholder="Nombre d'année souhaité" >
       </div>
       </div>
 
@@ -199,12 +212,13 @@
       <div class="row">
         <div class="col-md-12 mb-3">
           <label for="coverletter">Remarque</label>
-          <textarea class="form-control" id="coverletter" rows="10" >Remarques concernant le profil ou exigences:
+          <textarea class="form-control" id="remarque" formControlName="remarque" placeholder="Remarques concernant le profil ou exigences:" rows="10" >
           </textarea>
         </div>
       </div>
       <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" id="submit" >Save Information</button>
+        <button class="btn btn-primary btn-lg btn-block" id="submit" >Envoyer Demande</button>
+      </form>
     </div>
 <script src="lib/jquery.min.js"></script>
 <script src="lib/popper.min.js"></script>

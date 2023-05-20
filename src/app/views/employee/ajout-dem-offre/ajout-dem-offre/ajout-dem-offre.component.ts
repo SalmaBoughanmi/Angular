@@ -68,9 +68,9 @@ this.idoffre=this.route.snapshot.paramMap.get('id')
 let data=this.myGroup.value
 console.log(data)
 let deman:Demande=new Demande()
-deman.statut_chef="en attente"
-deman.statut_ds="en attente"
-deman.statut_rh="en attente"
+deman.statut_chef="En attente"
+deman.statut_ds="En attente"
+deman.statut_rh="En attente"
 deman.remarque=this.myGroup.value.remarque13
 deman.offre_id=this.idoffre
 deman.employe_id=this.idemployer

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AjoutDemOffreChefRoutingModule } from './ajout-dem-offre-chef-routing.module';
 import { AjoutDemOffreChefComponent } from './ajout-dem-offre-chef/ajout-dem-offre-chef.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { AjoutDemOffreChefComponent } from './ajout-dem-offre-chef/ajout-dem-off
   ],
   imports: [
     CommonModule,
-    AjoutDemOffreChefRoutingModule
+    AjoutDemOffreChefRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AjoutDemOffreChefModule { }

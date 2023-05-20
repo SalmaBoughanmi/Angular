@@ -18,7 +18,7 @@
         <div class="card-body">
           <h5 class="card-title" >{{ offre.fonction }}</h5>
           <a href="javascript:void(0);" class="card-link" (click)="Details(offre.offre_id)" routerLink="Details-offre">Voir details</a>
-          <a (click)="goto(offre.offre_id)" class="card-link">Postuler</a>
+          <a href="javascript:void(0);" class="card-link" (click)="goto(offre.offre_id)">Postuler</a>
         </div>
       </div>
     </div>
