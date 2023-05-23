@@ -13,10 +13,17 @@ export class DemandesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllDemandes(): Observable<Demande[]> {
-    return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes');
+  getAllDemandes(matricule:any): Observable<Demande[]> {
+    return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes/responsable/'+ matricule);
   }
-
+  getDemandeById(id:any): Observable<Demande[]> {
+    console.log(id)
+    return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes/Demande_id?demande_id='+ id);
+  }
+  getDemandeByStatutChef(statut:any): Observable<Demande[]> {
+    console.log(statut)
+    return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes/statut_chef?statut_chef='+ statut);
+  }
   /*getDemandes(): Observable<Demande[]> {
     return this.http.get<Demande[]>(this.baseApiUrl + '/api/demandes');
   }*/
@@ -30,9 +37,9 @@ export class DemandesService {
 
 // }
 
-gettraiterchef(id: number, demande: Demande): Observable<Demande> {
-  const url = `${this.baseApiUrl}/api/demandes/${id}`;
-  return this.http.put<Demande>(url, demande );
+gettraiterchef(id: number, statut: boolean , notif: any): Observable<Demande> {
+  const url = `${this.baseApiUrl}/api/Demandes/TraiterDemandeChef?demande_id=${id}&Etat=${statut}&NoteChef=${notif}`;
+  return this.http.get<any>(url);
 }
   getDemande(id: string): Observable<Demande>{
    return this.http.get<Demande>(this.baseApiUrl + '/api/demandes/' + id)
@@ -45,4 +52,12 @@ gettraiterchef(id: number, demande: Demande): Observable<Demande> {
   deleteDemande(id:number){
     return this.http.delete(this.baseApiUrl + '/api/demandes/' + id,{ responseType: 'text' })
   }
+  // AcceptDemande(data:any , id:any){
+  //   return this.http.put<Demande>(this.baseApiUrl + '/api/demandes/'+ id,
+  //  data);
+  // }
+  // CanceledDemande(event:boolean){
+
+  // }
+
 }

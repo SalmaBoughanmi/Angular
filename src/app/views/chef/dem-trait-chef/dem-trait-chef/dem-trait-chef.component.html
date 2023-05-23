@@ -5,27 +5,23 @@
 <table datatable class="table datatable" [dtOptions]="dtoption" [dtTrigger]="dtrigger" *ngIf="demandes && demandes.length >0">
   <thead>
     <tr>
-      <th>Id</th>
+
       <th>Matricule</th>
       <th>Nom</th>
-      <th>Prenom</th>
+      <th>Prénom</th>
+      <th>Fonction</th>
       <th class="text-center">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let demande of demandes">
-
-      <td>{{ demande.demande_id}}</td>
-
-<!-- </tr>
-
-        <tr *ngFor="let employee of employee">
-        <td>{{ employee.matricule}}</td>
-        <td>{{ employee.nom}}</td>
-        <td>{{ employee.prenom}}</td> -->
-        <td class="text-center">
+    <tr *ngFor="let demande of TableData">
+      <td>{{ demande.matricule}}</td>
+      <td>{{ demande.nom}}</td>
+      <td>{{ demande.prenom}}</td>
+      <td>{{ demande.fonction}}</td>
+       <td class="text-center">
         <div class="btn-group-sm btn-group" role="group">
-          <button class="btn-delete btn btn-primary" (click)="Traiter()">Traiter</button>
+          <button class="btn-delete btn btn-primary"(click)="goToDetails(demande)" >Traiter</button>
         </div>
       </td>
     </tr>

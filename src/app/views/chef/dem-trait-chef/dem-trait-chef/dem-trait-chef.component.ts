@@ -1,3 +1,4 @@
+import { EmployeesService } from './../../../../services/employees.service';
 import { Offre } from 'src/app/models/offre.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -11,9 +12,8 @@ import { Diplome } from 'src/app/models/diplome.model';
 import { Certification } from 'src/app/models/certification.model';
 import { Technologie } from 'src/app/models/technologie.mpdel';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
+import { OffresService } from 'src/app/services/offres.service';
+
 interface Employee {
   employe_id: number;
   nom: string;
@@ -38,7 +38,7 @@ interface Employee {
 })
 export class DemTraitChefComponent implements OnInit{
   baseApiUrl: string = environment.baseApiUrl;
-
+  statut:string="Acceptée"
   employee : any
   dtoption: DataTables.Settings = {};
   demandeDetails: Demande = {
@@ -87,12 +87,14 @@ export class DemTraitChefComponent implements OnInit{
   };
   dtrigger:Subject <any>=new Subject <any>()
   demandes: Demande[] = [];
+  TableData: any[] = [];
   demande: any;
   constructor(
     public dialog: MatDialog,
     private demandesService: DemandesService,
-    private http: HttpClient,
-    private router: Router
+    private employeeService:EmployeesService,
+    private offresService: OffresService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -103,39 +105,131 @@ export class DemTraitChefComponent implements OnInit{
     };
     this.getAllDemandes();
   }
-  Traiter(){
-    this.dialog.open(DialogDataExampleDialog, {
-      data: {
-        animal: 'panda',
-      },
-    });
 
-
-  }
-
-  // Traiter(id:number): void{
-
-  //   this.demandesService.gettraiterchef(id, this.demande)
-  //     .subscribe(response => {
-  //       console.log('Success:', response);
-  //     }, error => {
-  //       console.log('Error:', error);
-  //     });
-
-  // }
+  EmployeeTab:any[]=[]
+  OffreTab:any[]=[]
+  offr_id!:any
+  emp_id!:any
+  Demandes:any[]=[]
+  Offres:any[]=[]
+  matches :any[]= [];
   getAllDemandes() {
-    this.demandesService.getAllDemandes().subscribe({
+    var  matricule:any = JSON.parse(localStorage.getItem("user") || "" );
+    console.log(matricule['matricule'],'get matricule_resp')
+    this.demandesService.getAllDemandes(matricule['matricule']).subscribe({
       next: (demandes) => {
         this.demandes = demandes;
+        this.offr_id =   demandes[0].offre_id;
+        console.log( 'offre', this.offr_id)
+        this.employeeService.getAllEmployees().subscribe((data:any[]) => {
+          console.log( '+subscription employee',[data]);
+          this.EmployeeTab= data.filter(item => {
+            if (item.matricule_resp == matricule['matricule']) {
+              return item
+            }
+          })
+          console.log('+subscription demande',this.demandes)
+          console.log('+subscription employee',this.EmployeeTab);
+
+          for(let i=0 ; i <  this.EmployeeTab.length ; i++){
+
+             let CustomData = {
+                nom: this.EmployeeTab[i].nom,
+                prenom: this.EmployeeTab[i].prenom,
+                matricule:this.EmployeeTab[i].matricule,
+                employe_id:this.EmployeeTab[i].employe_id,
+                demande_id: this.demandes[i].demande_id,
+                statut_chef: this.demandes[i].statut_chef,
+              };
+            this.Demandes.push(CustomData)
+          //....................................//
+        }
+          console.log('+patched Demandes',this.Demandes, this.offr_id);
+
+
+          this.offresService.getOffre(this.offr_id).subscribe((data:any) => {
+
+            this.OffreTab = [data];
+            this.OffreTab.forEach((el) => {
+
+              let patchData = {
+                offr_fonction: el.fonction
+              };
+              this.Offres.push(patchData);
+            });
+            console.log('+patched offres',this.Offres);
+
+            this.getMatch(this.Demandes, this.Offres )
+            console.log('offre data',this.Offres);
+            console.log('emp data', this.Demandes)
+          });
+
+
+        });
+
         this.dtrigger.next(null)
       },
       error: (response) => {
         console.log(response);
       },
+
     });
   }
 
-}
-export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-}
+  // public getMtchTab(a:any[],b:any[]){
+  //   console.log('aaaa-------bbbb',a,b)
+  //   for(let i=0 ; i <  a.length ; i++){
+  //     for(let j=0 ; j < b.length ; j++){
+  //       let CustomData = {
+  //           nom: b[j].nom,
+  //           prenom: b[j].prenom,
+  //           matricule:b[j].matricule,
+  //           employe_id: b[j].employe_id,
+  //           demande_id: a[i].demande_id,
+  //       };
+  //       this.Demandes.push(CustomData)
+  //     }
+  //   }
+  //   console.log('-------', this.Demandes)
+  // }
+
+  public getMatch(x:any[],y:any[]) {
+    console.log('xxxx-------yyyy',x,y)
+    for(let i=0 ; i <  x.length ; i++){
+      console.log('result 1', x[i])
+      for(let j=0 ; j < y.length ; j++){
+        console.log('result 2', y[j])
+
+        let New=
+          {
+            nom:x[i].nom,
+            prenom:x[i].prenom,
+            matricule:x[i].matricule,
+            fonction:y[j].offr_fonction,
+            emp_id:x[i].employe_id,
+            demande_id:x[i].demande_id,
+            statut_chef: x[i].statut_chef,
+          }
+        this.matches.push(New)
+        this.TableData= this.matches.filter(item => {
+          if (item.statut_chef == "En attente") {
+            return item
+          }
+        })
+      }
+
+
+      //...........................................//
+    }
+    console.log('-------',this.matches)
+  }
+  goToDetails(event:any){
+    console.log(event)
+  let demande = event.demande_id
+  let employe = event.emp_id
+    this.router.navigate(['/chef/trait-chef',employe, demande ]);
+  }
+  }
+
+
+

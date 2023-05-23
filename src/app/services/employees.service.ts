@@ -23,7 +23,7 @@ addEmployee({ addEmployeeRequest }: { addEmployeeRequest: Employee; }) {
   addEmployeeRequest,{ responseType: 'text' });
 }
 
-getEmployee(id: string): Observable<Employee>{
+getEmployee(id: any): Observable<Employee>{
  return this.http.get<Employee>(this.baseApiUrl + '/api/employees/' + id)
 }
 
@@ -37,7 +37,6 @@ deleteEmployee(id:number){
 getAllmydemande(id:any){
   console.log(id)
   return this.http.get(this.baseApiUrl+'/api/Demandes/type/'+id)
-
 }
 }
 

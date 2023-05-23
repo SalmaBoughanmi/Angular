@@ -48,6 +48,8 @@ const routes: Routes = [
     {path:'Details-offre',loadChildren:()=>import('./views/chef/details-offre/details-offre.module').then(m=>m.DetailsOffreModule)},
     //{path:'notif-chef',loadChildren:()=>import('./views/chef/notif-chef/notif-chef.module').then(m=>m.NotifChefModule)},
     {path:'dem-trait-chef',loadChildren:()=>import('./views/chef/dem-trait-chef/dem-trait-chef.module').then(m=>m.DemTraitChefModule)},
+    {path:'trait-chef/:employe_id/:demande_id',loadChildren:()=>import('./views/chef/trait-chef/trait-chef.module').then(m=>m.TraitChefModule)},
+
   ]},
 
   {path:'rh',component:RhLayoutComponent,
@@ -57,12 +59,16 @@ const routes: Routes = [
     {path:'editoffre/:id',loadChildren:()=>import('./views/rh/editoffre/editoffre.module').then(m=>m.EditoffreModule)},
     {path:'ajout-offre-rh',loadChildren:()=>import('./views/rh/ajout-offre-rh/ajout-offre-rh.module').then(m=>m.AjoutOffreRhModule)},
     {path:'dem-trait-rh',loadChildren:()=>import('./views/rh/dem-trait-rh/dem-trait-rh.module').then(m=>m.DemTraitRhModule)},
+    {path:'trait-rh/:demande_id',loadChildren:()=>import('./views/rh/trait-rh/trait-rh.module').then(m=>m.TraitRhModule)},
+
   ]},
 
   {path:'ds',component:DsLayoutComponent,
   children:[
     {path:'',loadChildren:()=>import('./views/ds/dash-ds/dash-ds.module').then(m=>m.DashDsModule)},
     {path:'dem-trait-ds',loadChildren:()=>import('./views/ds/dem-trait-ds/dem-trait-ds.module').then(m=>m.DemTraitDsModule)},
+    {path:'trait-ds/:demande_id',loadChildren:()=>import('./views/ds/trait-ds/trait-ds.module').then(m=>m.TraitDsModule)},
+
   ]},
 
 
