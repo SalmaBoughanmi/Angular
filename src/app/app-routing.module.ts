@@ -59,7 +59,7 @@ const routes: Routes = [
     {path:'editoffre/:id',loadChildren:()=>import('./views/rh/editoffre/editoffre.module').then(m=>m.EditoffreModule)},
     {path:'ajout-offre-rh',loadChildren:()=>import('./views/rh/ajout-offre-rh/ajout-offre-rh.module').then(m=>m.AjoutOffreRhModule)},
     {path:'dem-trait-rh',loadChildren:()=>import('./views/rh/dem-trait-rh/dem-trait-rh.module').then(m=>m.DemTraitRhModule)},
-    {path:'trait-rh/:demande_id',loadChildren:()=>import('./views/rh/trait-rh/trait-rh.module').then(m=>m.TraitRhModule)},
+    {path:'trait-rh/:employe_id/:demande_id',loadChildren:()=>import('./views/rh/trait-rh/trait-rh.module').then(m=>m.TraitRhModule)},
 
   ]},
 
@@ -67,7 +67,7 @@ const routes: Routes = [
   children:[
     {path:'',loadChildren:()=>import('./views/ds/dash-ds/dash-ds.module').then(m=>m.DashDsModule)},
     {path:'dem-trait-ds',loadChildren:()=>import('./views/ds/dem-trait-ds/dem-trait-ds.module').then(m=>m.DemTraitDsModule)},
-    {path:'trait-ds/:demande_id',loadChildren:()=>import('./views/ds/trait-ds/trait-ds.module').then(m=>m.TraitDsModule)},
+    {path:'trait-ds/:employe_id/:demande_id',loadChildren:()=>import('./views/ds/trait-ds/trait-ds.module').then(m=>m.TraitDsModule)},
 
   ]},
 

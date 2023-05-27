@@ -24,6 +24,10 @@ export class DemandesService {
     console.log(statut)
     return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes/statut_chef?statut_chef='+ statut);
   }
+  getDemandeByStatutRh(statut:any): Observable<Demande[]> {
+    console.log(statut)
+    return this.http.get<Demande[]>(this.baseApiUrl + '/api/Demandes/statut_rh?statut_rh='+ statut);
+  }
   /*getDemandes(): Observable<Demande[]> {
     return this.http.get<Demande[]>(this.baseApiUrl + '/api/demandes');
   }*/
@@ -39,6 +43,16 @@ export class DemandesService {
 
 gettraiterchef(id: number, statut: boolean , notif: any): Observable<Demande> {
   const url = `${this.baseApiUrl}/api/Demandes/TraiterDemandeChef?demande_id=${id}&Etat=${statut}&NoteChef=${notif}`;
+  return this.http.get<any>(url);
+}
+
+gettraiterrh(id: number, statut: boolean , notif: any): Observable<Demande> {
+  const url = `${this.baseApiUrl}/api/Demandes/TraiterDemandeRH?demande_id=${id}&Etat=${statut}&NoteRH=${notif}`;
+  return this.http.get<any>(url);
+}
+
+gettraiterds(id: number, statut: boolean , notif: any): Observable<Demande> {
+  const url = `${this.baseApiUrl}/api/Demandes/TraiterDemandeDS?demande_id=${id}&Etat=${statut}&NoteDS=${notif}`;
   return this.http.get<any>(url);
 }
   getDemande(id: string): Observable<Demande>{

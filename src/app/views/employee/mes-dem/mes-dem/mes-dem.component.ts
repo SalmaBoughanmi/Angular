@@ -1,41 +1,8 @@
-/*import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { EmployeesService } from 'src/app/services/employees.service';
-
-@Component({
-  selector: 'app-mes-dem',
-  templateUrl: './mes-dem.component.html',
-  styleUrls: ['./mes-dem.component.css']
-})
-export class MesDemComponent implements OnInit
-{
-iduser:any
-listedemande:any
-
-  constructor(private router:Router,private emmployerser:EmployeesService){}
-
-  ngOnInit(): void {
-this.getAll()
-    this.iduser=localStorage.getItem('iduser')
-    this.emmployerser.getAllmydemande(this.iduser).subscribe(data=>{
-      console.log(data)
-      this.listedemande=data
-    })
-    console.log(this.iduser)
-  }
-
-
-  getAll(){
-    this.emmployerser.getAllmydemande(this.iduser).subscribe(data=>{
-      console.log(data)
-      this.listedemande=data
-    })
-  }
-}
-*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { OffresService } from 'src/app/services/offres.service';
+import { Demande } from 'src/app/models/demande.model';
 
 @Component({
   selector: 'app-mes-dem',
@@ -45,19 +12,52 @@ import { EmployeesService } from 'src/app/services/employees.service';
 export class MesDemComponent implements OnInit {
   iduser: any;
   listedemande: any;
+  user:any;
+  OffreTab:any[]=[];
+  mesDemandes:any[]=[];
+  demandes: any[] = [];
 
-  constructor(private router: Router, private emmployerser: EmployeesService) {}
+  constructor(private router: Router, private emmployerser: EmployeesService,private offresService: OffresService) {}
 
   ngOnInit(): void {
     this.iduser = localStorage.getItem('iduser');
     console.log(this.iduser);
-    this.getAll();
+    this.emmployerser.getEmployee(this.iduser).subscribe(data=>{
+      this.user = data;
+    });
+    this.offresService.getOffres().subscribe((data:any) => {
+        this.OffreTab = data;
+    });
+    this.emmployerser.getAllmydemande(this.iduser).subscribe((data:any) => {
+        this.demandes = data;
+        this.getAll();
+        console.log('employees chef',data);
+    });
   }
 
   getAll() {
-    this.emmployerser.getAllmydemande(this.iduser).subscribe(data => {
-      console.log(data);
-      this.listedemande = data;
-    });
+    for(let i =0; i < this.demandes.length ; i++)
+      {
+          let offer:any;
+          for(let j=0 ; j <  this.OffreTab.length ; j++)
+          {
+              if (this.demandes[i].offre_id == this.OffreTab[j].offre_id)
+              {
+                  offer= this.OffreTab[j];
+              }
+          }
+          let CustomData =
+          {
+            nom : this.user.nom,
+            prenom : this.user.prenom,
+            fonction : offer.fonction,
+            statut_chef : this.demandes[i].statut_chef,
+            statut_rh : this.demandes[i].statut_rh,
+            statut_ds : this.demandes[i].statut_ds,
+          };
+          this.mesDemandes.push(CustomData);
+      }
+      this.listedemande = this.mesDemandes;
+
   }
 }

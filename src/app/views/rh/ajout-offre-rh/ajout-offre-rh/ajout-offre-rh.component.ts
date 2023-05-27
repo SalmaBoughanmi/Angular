@@ -15,9 +15,7 @@ export class AjoutOffreRhComponent implements OnInit {
     fonction: '',
     description: '',
     type_offre: '',
-    nb_poste: 0,
-
-
+    nb_poste: 0
   };
 
   constructor(private offreService: OffresService, private router: Router) { }
@@ -28,7 +26,7 @@ export class AjoutOffreRhComponent implements OnInit {
   addOffre(){
     this.offreService.addOffre({ addOffreRequest: this.addOffreRequest })
     .subscribe({
-      next:(offre) => {
+      next:(Offre) => {
       this.router.navigate(['/rh/offres']);
       }
     });

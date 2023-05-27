@@ -1,1 +1,242 @@
-<p>trait-rh works!</p>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Options - Easy Job Application Filler</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <div class="bg-light">
+    <div class="container">
+  <div class="offset-md-2 col-md-8 text-center py-5">
+    <h2>Demande de recrutement</h2>
+  </div>
+
+  <div class="row">
+    <div class="offset-md-2 col-md-8 offset-md-2 order-md-1">
+      <form  [formGroup]="New_Form">
+     <!--<div class="row">
+        <div class="col-md-6 mb-3">
+        <label for="datecreation">Date de création </label>
+          <input type="text"  class="form-control" formControlName="date_creation" id="phone" style="    display: contents;" >
+        <input type="text" class="form-control" formControlName="date_creation" id="phone" placeholder="jj-MM-AAAA">
+
+    </div>
+  </div>-->
+
+  <hr class="mb-4">
+
+      <h4 class="mb-3">Demandeur</h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstname">Nom</label>
+            <input type="text" class="form-control"id="firstname" placeholder="Nom" formControlName="nom" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastname">Prénom</label>
+            <input type="text" class="form-control"  id="lastname" placeholder="Prénom" formControlName="prenom" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="fonction">Fonction</label>
+            <input type="text" class="form-control"  id="Fonction" placeholder="Fonction" formControlName="fonction" required>
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="card">
+          <div class="card-header d-flex justify-content-between">
+             <div class="header-title">
+                <h4 class="card-title">Diplôme(s)</h4>
+             </div>
+          </div>
+          <div class="card-body">
+            <table class="table align-middle table-nowrap mb-0 text-center">
+              <thead class="table-light">
+                 <tr>
+                  <th> Nom Diplome</th>
+                  <th> Lieu Diplome</th>
+
+                 </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of diplomes">
+                  <td>{{item.nom_diplome}}</td>
+                  <td>{{item.lieu_diplome}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+
+       <hr class="mb-4">
+
+       <div class="card">
+        <div class="card-header d-flex justify-content-between">
+           <div class="header-title">
+              <h4 class="card-title">Certificat(s)</h4>
+           </div>
+        </div>
+        <div class="card-body">
+          <table class="table align-middle table-nowrap mb-0 text-center">
+            <thead class="table-light">
+               <tr>
+                <th> Nom Certificat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of certifications">
+                <td>{{item.nom_certif}}</td>
+             </tr>
+            </tbody>
+          </table>
+        </div>
+     </div>
+
+     <hr class="mb-4">
+
+     <div class="card">
+      <div class="card-header d-flex justify-content-between">
+         <div class="header-title">
+            <h4 class="card-title">Technologie(s)</h4>
+         </div>
+      </div>
+      <div class="card-body">
+        <table class="table align-middle table-nowrap mb-0 text-center">
+          <thead class="table-light">
+             <tr>
+              <th> Nom Technologie</th>
+
+
+             </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of technologies">
+              <td>{{item.nom_techno}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   </div>
+
+   <hr class="mb-4">
+
+   <div class="card">
+    <div class="card-header d-flex justify-content-between">
+       <div class="header-title">
+          <h4 class="card-title">Expérience(s)</h4>
+       </div>
+    </div>
+    <div class="card-body">
+      <table class="table align-middle table-nowrap mb-0 text-center">
+        <thead class="table-light">
+           <tr>
+            <th> Poste</th>
+            <th> Entreprise</th>
+            <th> Date Début</th>
+            <th> Date Fin</th>
+           </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of experiences">
+            <td>{{item.poste}}</td>
+            <td>{{item.entreprise}}</td>
+            <td>{{item.date_debut}}</td>
+            <td>{{item.date_fin}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ </div>
+
+
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3">Profil de la fonction:</h4>
+
+      <div class="input-group mb-3">
+      <div class="row">
+         <label for="lastname">Nature de contrat</label>
+          <div class="col-md-12 mb-3">
+          <select class="form-select" id="nature_contrat" formControlName="nature_contrat"   >
+            <option value="">-- Choisir un contrat --</option>
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="CTT">CIVP</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <h4 class="mb-3">Nombre d'année souhaité:</h4>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <input type="number" class="form-control" formControlName="nb_a_exp" id="nb_a_exp" placeholder="Nombre d'année souhaité" >
+      </div>
+      </div>
+
+      <hr class="mb-4">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label for="coverletter">Remarque</label>
+          <textarea class="form-control" id="remarque" formControlName="remarque" placeholder="Remarques concernant le profil ou exigences:" rows="10" >
+          </textarea>
+        </div>
+      </div>
+      <hr class="mb-4">
+        <div class="d-flex justify-contenet-between">
+               <div class="col-md-4 px-2">
+                 <button class="btn btn-info btn-lg btn-block" id="submit" (click)="toggleShow()">Ajouter Notification</button>
+               </div>
+               <div class="col-md-4 px-2">
+                <button class="btn btn-danger btn-lg btn-block" id="submit" (click)="refuser()" >Refuser</button>
+               </div>
+               <div class="col-md-4  px-2">
+                <button class="btn btn-success btn-lg btn-block" id="submit" (click)="accepter()">Accepter</button>
+               </div>
+
+        </div>
+        <br>
+        <div *ngIf="isShown" class="row container-fluid"  id="divshow" >
+          <textarea type="text" class="form-control" formControlName="motif_rh"  placeholder="Entrer Notification" > </textarea>
+        </div>
+      </form>
+    </div>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/popper.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="js/options.js"></script>
+

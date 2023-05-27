@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DemTraitRhRoutingModule } from './dem-trait-rh-routing.module';
 import { DemTraitRhComponent } from './dem-trait-rh/dem-trait-rh.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DemTraitRhComponent } from './dem-trait-rh/dem-trait-rh.component';
   ],
   imports: [
     CommonModule,
-    DemTraitRhRoutingModule
+    DemTraitRhRoutingModule,
+    DataTablesModule,
   ]
 })
 export class DemTraitRhModule { }

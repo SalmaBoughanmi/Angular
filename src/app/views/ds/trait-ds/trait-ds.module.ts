@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TraitDsRoutingModule } from './trait-ds-routing.module';
 import { TraitDsComponent } from './trait-ds/trait-ds.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { TraitDsComponent } from './trait-ds/trait-ds.component';
   ],
   imports: [
     CommonModule,
-    TraitDsRoutingModule
+    TraitDsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TraitDsModule { }

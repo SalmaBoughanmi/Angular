@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TraitRhRoutingModule } from './trait-rh-routing.module';
 import { TraitRhComponent } from './trait-rh/trait-rh.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { TraitRhComponent } from './trait-rh/trait-rh.component';
   ],
   imports: [
     CommonModule,
-    TraitRhRoutingModule
+    TraitRhRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TraitRhModule { }

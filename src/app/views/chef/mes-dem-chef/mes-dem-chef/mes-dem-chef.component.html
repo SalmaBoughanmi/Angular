@@ -7,130 +7,95 @@
 			<thead>
 				<tr>
 					<th class="text-center">Nom</th>
-					<th class="text-center">Demande</th>
-					<th class="text-center">Date</th>
+          <th class="text-center">Prénom</th>
+					<th class="text-center">Offre</th>
+
 					<th class="text-center">Statut demande</th>
 					<th class="text-center">Chef</th>
 					<th class="text-center">RH</th>
 					<th class="text-center">DS</th>
-					<th class="text-center">Actions</th>
+
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="text-center" ><a href="/architectui-angular-free/tables/bootstrap" >Juan C. Cargill</a></td>
-					<td class="text-center"><a href="/architectui-angular-free/tables/bootstrap">Micro Electronics</a></td>
-					<td class="text-center"><span class="pr-2 opacity-6"><i class="fa fa-business-time"></i></span> 12 Dec </td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
+				<tr *ngFor="let i of listedemande">
+					<td class="text-center" >{{i.nom}}</td>
+          <td class="text-center" >{{i.prenom}}</td>
+					<td class="text-center">{{i.fonction}}</td>
+
 					<td class="text-center">
-						<div class="btn-group-sm btn-group" role="group">
-							<button class="btn-shadow btn btn-primary">supprimer</button>
-							<button class="btn-shadow btn btn-primary">Modifier</button>
-						</div>
-					</td>
+            <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En_attente' && i.statut_rh=='En_attente';else templateName">
+              <span class="badge badge-pill badge-info">En cours</span>
+            </ng-container>
+              <ng-template #templateName>
+                <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En_attente' && i.statut_rh=='Acceptée'">
+                  <span class="badge badge-pill badge-info">En cours</span>
+                </ng-container>
+              </ng-template>
+
+              <div *ngIf=" i.statut_rh=='En attente'|| i.statut_chef=='En attente'|| i.statut_ds=='En attente'">
+                <span class="badge badge-pill badge-primary">En attente</span>
+              </div>
+
+              <ng-container *ngIf="i.statut_chef=='Refusée' && i.statut_ds=='En attente' && i.statut_rh=='En attente';else template">
+                <span class="badge badge-pill badge-danger">Refusée</span>
+              </ng-container>
+                <ng-template #template>
+                  <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En attente' && i.statut_rh=='Refusée'else template2">
+                    <span class="badge badge-pill badge-danger">Refusée</span>
+                  </ng-container>
+                </ng-template>
+                <ng-template #template2>
+                  <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='Refusée' && i.statut_rh=='Acceptée'">
+                    <span class="badge badge-pill badge-danger">Refusée</span>
+                  </ng-container>
+                </ng-template>
+
+
+                <div *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='Acceptée' && i.statut_rh=='Acceptée'">
+            <span class="badge badge-pill badge-success">Acceptée</span>
+
+          </div>
+
+         </td>
+					<td class="text-center">
+            <div *ngIf=" i.statut_chef=='Refusée'">
+              <span class="badge badge-pill badge-danger">Refusée</span>
+            </div>
+            <div *ngIf=" i.statut_chef=='En attente'">
+              <span class="badge badge-pill badge-info">En attente</span>
+            </div>
+            <div *ngIf=" i.statut_chef=='Acceptée'">
+              <span class="badge badge-pill badge-success">Acceptée</span>
+
+            </div>
+          </td>
+					<td class="text-center">
+            <div *ngIf=" i.statut_rh=='Refusée'">
+              <span class="badge badge-pill badge-danger">Refusée</span>
+            </div>
+            <div *ngIf=" i.statut_rh=='En attente'">
+              <span class="badge badge-pill badge-info">En attente</span>
+            </div>
+            <div *ngIf=" i.statut_rh=='Acceptée'">
+              <span class="badge badge-pill badge-success">Acceptée</span>
+
+            </div>
+          </td>
+        		<td class="text-center">
+            <div *ngIf=" i.statut_ds=='Refusée'">
+              <span class="badge badge-pill badge-danger">Refusée</span>
+            </div>
+            <div *ngIf=" i.statut_ds=='En attente'">
+              <span class="badge badge-pill badge-info">En attente</span>
+            </div>
+            <div *ngIf=" i.statut_ds=='Acceptée'">
+              <span class="badge badge-pill badge-success">Acceptée</span>
+
+            </div>
+          </td>
 				</tr>
-
-
-
-
-
-
-
-                 <tr>
-					<td class="text-center" ><a href="/architectui-angular-free/tables/bootstrap" ></a></td>
-					<td class="text-center"><a href="/architectui-angular-free/tables/bootstrap">Micro Electronics</a></td>
-					<td class="text-center"><span class="pr-2 opacity-6"><i class="fa fa-business-time"></i></span> 12 Dec </td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-info">en attente</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-info">en attente</div></td>
- 					<td class="text-center">
-						<div class="btn-group-sm btn-group" role="group">
-							<button class="btn-shadow btn btn-primary">supprimer</button>
-							<button class="btn-shadow btn btn-primary">Modifier</button>
-						</div>
-					</td>
-				</tr>
-
-
-
-
-
-                 <tr>
-					<td class="text-center" ><a href="/architectui-angular-free/tables/bootstrap" >Juan C. Cargill</a></td>
-					<td class="text-center"><a href="/architectui-angular-free/tables/bootstrap">Micro Electronics</a></td>
-					<td class="text-center"><span class="pr-2 opacity-6"><i class="fa fa-business-time"></i></span> 12 Dec </td>
-					<td class="text-center"><div class="badge badge-pill badge-danger">refusé</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-info">en attente</div></td>
-				    <td class="text-center"><div class="badge badge-pill badge-warning">en cours</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-warning">en cours</div></td>
-
- 					<td class="text-center">
-						<div class="btn-group-sm btn-group" role="group">
-							<button class="btn-shadow btn btn-primary">supprimer</button>
-							<button class="btn-shadow btn btn-primary">Modifier</button>
-						</div>
-					</td>
-				</tr>
-
-
-
-
-
-
-
-
-                  <tr>
-					<td class="text-center" ><a href="/architectui-angular-free/tables/bootstrap" >Juan C. Cargill</a></td>
-					<td class="text-center"><a href="/architectui-angular-free/tables/bootstrap">Micro Electronics</a></td>
-					<td class="text-center"><span class="pr-2 opacity-6"><i class="fa fa-business-time"></i></span> 12 Dec </td>
-					<td class="text-center"><div class="badge badge-pill badge-success">accepté</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-info">en attente</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-success">accepté</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-warning">en cours</div></td>
-
- 					<td class="text-center">
-						<div class="btn-group-sm btn-group" role="group">
-							<button class="btn-shadow btn btn-primary">supprimer</button>
-							<button class="btn-shadow btn btn-primary">Modifier</button>
-						</div>
-					</td>
-				</tr>
-
-
-
-
-               <tr>
-					<td class="text-center" ><a href="/architectui-angular-free/tables/bootstrap" >Juan C. Cargill</a></td>
-					<td class="text-center"><a href="/architectui-angular-free/tables/bootstrap">Micro Electronics</a></td>
-					<td class="text-center"><span class="pr-2 opacity-6"><i class="fa fa-business-time"></i></span> 12 Dec </td>
-					<td class="text-center"><div class="badge badge-pill badge-success">accepté</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-info">en attente</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-success">accepté</div></td>
-					<td class="text-center"><div class="badge badge-pill badge-warning">en cours</div></td>
-
- 					<td class="text-center">
-						<div class="btn-group-sm btn-group" role="group">
-							<button class="btn-shadow btn btn-primary">supprimer</button>
-							<button class="btn-shadow btn btn-primary">Modifier</button>
-						</div>
-					</td>
-				</tr>
-
-
-
-
-
-
-
-
 			</tbody>
 		</table>
-	</div>
-	<div class="d-block p-4 text-center card-footer">
-		<button class="btn-pill btn-shadow btn-wide fsize-1 btn btn-dark btn-lg"><span class="mr-2 opacity-7"><i class="fa fa-cog fa-spin"></i></span><span class="mr-1">Voir tout</span></button>
 	</div>
 </div>

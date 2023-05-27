@@ -87,7 +87,7 @@ addDiplome(){
     Swal.fire({
       position: 'center',
       icon: 'warning',
-      title: 'verifier votre champs',
+      title: 'Vérifier votre champs',
       showConfirmButton: false,
       timer: 2000
     })
@@ -105,7 +105,7 @@ console.log(data)
 Swal.fire({
   position: 'center',
   icon: 'success',
-  title: 'new Diplome added',
+  title: 'Nouveau diplôme ajouté',
   showConfirmButton: false,
   timer: 3000
 })
@@ -119,7 +119,7 @@ addCertif(){
     Swal.fire({
       position: 'center',
       icon: 'warning',
-      title: 'verifier votre champs',
+      title: 'Vérifier votre champs',
       showConfirmButton: false,
       timer: 2000
     })
@@ -136,7 +136,7 @@ console.log(data)
 Swal.fire({
   position: 'center',
   icon: 'success',
-  title: 'new certificat added',
+  title: 'Nouveau certificat ajouté',
   showConfirmButton: false,
   timer: 3000
 })
@@ -151,7 +151,7 @@ addTechnologie(){
     Swal.fire({
       position: 'center',
       icon: 'warning',
-      title: 'verifier votre champs',
+      title: 'Vérifier votre champs',
       showConfirmButton: false,
       timer: 2000
     })
@@ -168,7 +168,7 @@ console.log(data)
 Swal.fire({
   position: 'center',
   icon: 'success',
-  title: 'new Technologie added',
+  title: 'Nouvelle technologie ajoutée',
   showConfirmButton: false,
   timer: 3000
 })
@@ -183,7 +183,7 @@ addExperience(){
     Swal.fire({
       position: 'center',
       icon: 'warning',
-      title: 'verifier votre champs',
+      title: 'Vérifier votre champs',
       showConfirmButton: false,
       timer: 2000
     })
@@ -203,7 +203,7 @@ console.log(data)
 Swal.fire({
   position: 'center',
   icon: 'success',
-  title: 'new Experience added',
+  title: 'Nouvelle expérience ajoutée',
   showConfirmButton: false,
   timer: 3000
 })

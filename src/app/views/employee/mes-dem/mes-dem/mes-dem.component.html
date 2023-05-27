@@ -7,6 +7,7 @@
 			<thead>
 				<tr>
 					<th class="text-center">Nom</th>
+          <th class="text-center">Prénom</th>
 					<th class="text-center">Offre</th>
 
 					<th class="text-center">Statut demande</th>
@@ -19,6 +20,7 @@
 			<tbody>
 				<tr *ngFor="let i of listedemande">
 					<td class="text-center" >{{i.nom}}</td>
+          <td class="text-center" >{{i.prenom}}</td>
 					<td class="text-center">{{i.fonction}}</td>
 
 					<td class="text-center">
@@ -31,15 +33,15 @@
                 </ng-container>
               </ng-template>
 
-              <div *ngIf=" i.statut_rh=='En_attente'|| i.statut_chef=='En_attente'|| i.statut_ds=='En_attente'">
+              <div *ngIf=" i.statut_rh=='En attente'|| i.statut_chef=='En attente'|| i.statut_ds=='En attente'">
                 <span class="badge badge-pill badge-primary">En attente</span>
               </div>
 
-              <ng-container *ngIf="i.statut_chef=='Refusée' && i.statut_ds=='En_attente' && i.statut_rh=='En_attente';else template">
+              <ng-container *ngIf="i.statut_chef=='Refusée' && i.statut_ds=='En attente' && i.statut_rh=='En attente';else template">
                 <span class="badge badge-pill badge-danger">Refusée</span>
               </ng-container>
                 <ng-template #template>
-                  <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En_attente' && i.statut_rh=='Refusée'else template2">
+                  <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En attente' && i.statut_rh=='Refusée'else template2">
                     <span class="badge badge-pill badge-danger">Refusée</span>
                   </ng-container>
                 </ng-template>
@@ -60,7 +62,7 @@
             <div *ngIf=" i.statut_chef=='Refusée'">
               <span class="badge badge-pill badge-danger">Refusée</span>
             </div>
-            <div *ngIf=" i.statut_chef=='En_attente'">
+            <div *ngIf=" i.statut_chef=='En attente'">
               <span class="badge badge-pill badge-info">En attente</span>
             </div>
             <div *ngIf=" i.statut_chef=='Acceptée'">
@@ -72,7 +74,7 @@
             <div *ngIf=" i.statut_rh=='Refusée'">
               <span class="badge badge-pill badge-danger">Refusée</span>
             </div>
-            <div *ngIf=" i.statut_rh=='En_attente'">
+            <div *ngIf=" i.statut_rh=='En attente'">
               <span class="badge badge-pill badge-info">En attente</span>
             </div>
             <div *ngIf=" i.statut_rh=='Acceptée'">
@@ -84,7 +86,7 @@
             <div *ngIf=" i.statut_ds=='Refusée'">
               <span class="badge badge-pill badge-danger">Refusée</span>
             </div>
-            <div *ngIf=" i.statut_ds=='En_attente'">
+            <div *ngIf=" i.statut_ds=='En attente'">
               <span class="badge badge-pill badge-info">En attente</span>
             </div>
             <div *ngIf=" i.statut_ds=='Acceptée'">

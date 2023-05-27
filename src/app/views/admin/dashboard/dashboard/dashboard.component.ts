@@ -36,7 +36,7 @@ export class DashboardComponent {
             data: {
                 labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
                 datasets: [{
-                    label: '# of Votes',
+                   label: 'NB Postes',
                     data: [12, 19, 3, 5, 2, 3,4,8,2,6,7,1],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -85,10 +85,10 @@ export class DashboardComponent {
           type: 'pie', //this denotes tha type of chart
 
           data: {// values on X-Axis
-            labels: ['Nombre d acceptation', 'Nombre d employe','Nombre Refus','Nombre d offre', ],
+            labels: ['Demandes acceptées', 'Offres disponibles','Demandes refusées','Nombre demandes', ],
                datasets: [{
         label: 'My First Dataset',
-        data: [300, 240, 100, 432,],
+        data: [53, 45, 12, 120,],
         backgroundColor: [
           'green',
           'pink',
