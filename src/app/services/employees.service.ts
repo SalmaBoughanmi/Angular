@@ -38,5 +38,10 @@ getAllmydemande(id:any){
   console.log(id)
   return this.http.get(this.baseApiUrl+'/api/Demandes/type/'+id)
 }
+
+searchEmployee(body:any):Observable<any>{
+  return this.http.get(this.baseApiUrl+'/api/Employees/SearchEmployee/'+body)
+
+}
 }
 

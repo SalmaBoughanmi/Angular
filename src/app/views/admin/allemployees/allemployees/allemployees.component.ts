@@ -31,6 +31,7 @@ export class AllemployeesComponent implements OnInit {
     technologies: [],
   };
 
+  itemsearch:any
   employees: Employee[] = [];
   constructor(
     private employeesService: EmployeesService,
@@ -55,6 +56,16 @@ export class AllemployeesComponent implements OnInit {
       },
     });
   }
+
+  search(){
+    this.employeesService.searchEmployee(this.itemsearch).subscribe(data=>{
+      console.log((data))
+      this.employees =data
+    })
+    }
+    annule(){
+      this.getAllEmployee()
+    }
 
   updateEmployee(id: number) {
     this.router.navigate(['/admin/editemployee/' + id]);

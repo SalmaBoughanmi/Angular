@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CertificationService } from 'src/app/services/certification.service';
 import { DiplomeService } from 'src/app/services/diplome.service';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { ExperiencesService } from 'src/app/services/experiences.service';
+import { TechnologiesService } from 'src/app/services/technologies.service';
 
 @Component({
   selector: 'app-voir-profil',
@@ -15,7 +18,8 @@ export class VoirProfilChefComponent implements OnInit {
   idemployer:any
   listexper:any
 
-    constructor( private employeeService: EmployeesService, private diplomeService: DiplomeService, private router: Router){
+    constructor( private employeeService: EmployeesService, private diplomeService: DiplomeService, private experienceService: ExperiencesService,
+      private certifService: CertificationService, private technoService: TechnologiesService, private router: Router){
       this.idemployer=localStorage.getItem("iduser");
 console.log(this.idemployer)
     }
@@ -35,13 +39,43 @@ console.log(this.idemployer)
   })
 
   }
-  deleteDiplome(id: number){
+  deleteDiplome(id: any){
 
     this.diplomeService.deleteDiplome(id)
    .subscribe((res:any)=>{
-     this.listdiplome()
+     this.ngOnInit()
 
    });
 }
+
+deleteExperience(id: any){
+
+  this.experienceService.deleteExperience(id).subscribe((res:any)=>{
+   this.ngOnInit()
+
+ });
+
+
+}
+
+deleteCertif(id: any){
+
+  this.certifService.deleteCertif(id)
+ .subscribe((res:any)=>{
+   this.ngOnInit()
+
+ });
+}
+
+deleteTechnologie(id: any){
+
+  this.technoService.deleteTechnologie(id)
+ .subscribe((res:any)=>{
+   this.ngOnInit()
+
+ });
+}
+
+
 
 }

@@ -105,7 +105,7 @@
                             <h6 class="mb-2">Nom Technologie : {{item.nom_techno}}</h6>
                           </div>
                           <div class="col-md-8 offset-md-10">
-                            <button type="submit" class="btn btn-danger" >Supprimer</button>
+                            <button type="submit" class="btn btn-danger" (click)="deleteTechnologie(item.techno_id)">Supprimer</button>
                           </div>
                           <hr class="my-4" />
                         </div>
@@ -128,7 +128,7 @@
                             <h6 class="mb-2">Nom Certificat : {{item.nom_certif}}</h6>
                           </div>
                           <div class="col-md-8 offset-md-10">
-                            <button type="submit" class="btn btn-danger" >Supprimer</button>
+                            <button type="submit" class="btn btn-danger" (click)="deleteCertif(item.certif_id)">Supprimer</button>
                           </div>
                           <hr class="my-4" />
                         </div>
@@ -158,7 +158,7 @@
                             </div>
                           </div>
                           <div class="col-md-8 offset-md-10">
-                            <button type="submit" class="btn btn-danger" (click)="deleteDiplome(item)">Supprimer</button>
+                            <button type="submit" class="btn btn-danger" (click)="deleteDiplome(item.diplome_id)">Supprimer</button>
                           </div>
                           <hr class="my-4" />
                         </div>
@@ -198,7 +198,7 @@
                             </div>
                           </div>
                           <div class="col-md-8 offset-md-10">
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                            <button type="submit" class="btn btn-danger" (click)="deleteExperience(item.experience_id)">Supprimer</button>
                           </div>
                         </div>
                         <hr class="my-4" />

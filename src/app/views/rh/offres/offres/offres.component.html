@@ -1,6 +1,16 @@
 <div class="container my-5">
   <h1 class="mb-3">Offres</h1>
 
+  <div class="col-lg-6">
+
+    <div class="hstack gap-3 mb-4">
+      <input class="form-control me-auto" type="text" placeholder="Chercher offre ici..."  [(ngModel)]="itemsearch" aria-label="Chercher offre ici...">
+      <button type="button" (click)="search()" class="btn btn-secondary">Chercher</button>
+      <button type="button" (click)="annule()" class="btn btn-secondary">Annuler</button>
+
+  </div>
+  </div>
+
 <div class="table-responsive">
 <table class="table" *ngIf="offres && offres.length >0">
   <thead>

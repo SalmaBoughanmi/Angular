@@ -21,6 +21,7 @@ export class OffresComponent implements OnInit {
     nb_poste: 0,
 
   };
+  itemsearch:any
 offres: Offre[] = [];
 constructor(private offresService: OffresService, private http: HttpClient , private router: Router) {}
 
@@ -50,6 +51,15 @@ constructor(private offresService: OffresService, private http: HttpClient , pri
 
     });
 }
+search(){
+  this.offresService.searchoffre(this.itemsearch).subscribe(data=>{
+    console.log((data))
+    this.offres =data
+  })
+  }
+  annule(){
+    this.getAllOffre()
+  }
 
  }
 
