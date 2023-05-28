@@ -1,7 +1,7 @@
 import { EmployeesService } from './../../../../services/employees.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DemandesService } from 'src/app/services/demandes.service';
 
 @Component({
@@ -14,7 +14,7 @@ demande_id:any;
 employe_id:any;
 isShown: boolean = false ;
 
-constructor(private activatedRoute:ActivatedRoute, public demandeService: DemandesService ,public employeService: EmployeesService){
+constructor(private activatedRoute:ActivatedRoute, public demandeService: DemandesService ,public employeService: EmployeesService, private router: Router){
 
   this.activatedRoute.paramMap.subscribe(
     params => {
@@ -105,26 +105,22 @@ New_Form = new FormGroup({
   let statut:boolean=true
   let motif_chef=this.New_Form.controls.motif_chef.value;
   console.log(motif_chef)
-  this.demandeService.gettraiterchef(this.demande_id, statut, motif_chef).subscribe({
-    complete: () => {
-      console.log(motif_chef,'successfully updated !');
-    },
-    error: () => {
-        console.log(motif_chef,'oups please check !');
-      },
+  this.demandeService.gettraiterchef(this.demande_id, statut, motif_chef)
+  .subscribe(data=>{
+    console.log(data)
+    this.router.navigateByUrl("/chef/dem-trait-chef")
+
     })
  }
  refuser(){
   let statut:boolean=false
   let motif_chef=this.New_Form.controls.motif_chef.value;
   console.log(motif_chef)
-  this.demandeService.gettraiterchef(this.demande_id,statut, motif_chef).subscribe({
-    complete: () => {
-      console.log(motif_chef,'successfully updated !');
-    },
-    error: () => {
-        console.log(motif_chef,'oups please check !');
-      },
+  this.demandeService.gettraiterchef(this.demande_id,statut, motif_chef)
+  .subscribe(data=>{
+    console.log(data)
+    this.router.navigateByUrl("/chef/dem-trait-chef")
+
     })
  }
 

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-allemployees',
@@ -14,7 +14,6 @@ import { Subject } from 'rxjs';
 export class AllemployeesComponent implements OnInit {
   baseApiUrl: string = environment.baseApiUrl;
 
-  dtoption: DataTables.Settings = {};
   employeeDetails: Employee = {
     employe_id: 0,
     nom: '',
@@ -31,7 +30,7 @@ export class AllemployeesComponent implements OnInit {
     certifications: [],
     technologies: [],
   };
-  dtrigger:Subject <any>=new Subject <any>()
+
   employees: Employee[] = [];
   constructor(
     private employeesService: EmployeesService,
@@ -41,18 +40,15 @@ export class AllemployeesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.dtoption = {
-      pagingType: 'full_numbers',
-      searching:true,
-      lengthChange:false
-    };
-    this.getAllEmployee();
+
+    this.getAllEmployee()
   }
   getAllEmployee() {
-    this.employeesService.getAllEmployees().subscribe({
+    this.employeesService.getAllEmployees()
+    .subscribe({
       next: (employees) => {
         this.employees = employees;
-        this.dtrigger.next(null)
+
       },
       error: (response) => {
         console.log(response);
@@ -64,7 +60,8 @@ export class AllemployeesComponent implements OnInit {
     this.router.navigate(['/admin/editemployee/' + id]);
   }
   deleteEmployee(id: number) {
-    this.employeesService.deleteEmployee(id).subscribe((res: any) => {
+    this.employeesService.deleteEmployee(id)
+    .subscribe((res: any) => {
       this.getAllEmployee();
     });
   }

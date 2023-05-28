@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DemandesService } from 'src/app/services/demandes.service';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -14,7 +14,7 @@ export class TraitDsComponent  implements OnInit{
   employe_id:any;
   isShown: boolean = false ;
 
-  constructor(private activatedRoute:ActivatedRoute, public demandeService: DemandesService ,public employeService: EmployeesService){
+  constructor(private activatedRoute:ActivatedRoute, public demandeService: DemandesService ,public employeService: EmployeesService, private router: Router){
 
     this.activatedRoute.paramMap.subscribe(
       params => {
@@ -105,26 +105,20 @@ export class TraitDsComponent  implements OnInit{
     let statut:boolean=true
     let motif_ds=this.New_Form.controls.motif_ds.value;
     console.log(motif_ds)
-    this.demandeService.gettraiterrh(this.demande_id, statut, motif_ds).subscribe({
-      complete: () => {
-        console.log(motif_ds,'successfully updated !');
-      },
-      error: () => {
-          console.log(motif_ds,'oups please check !');
-        },
+    this.demandeService.gettraiterrh(this.demande_id, statut, motif_ds)
+     .subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl("/ds/dem-trait-ds")
       })
    }
    refuser(){
     let statut:boolean=false
     let motif_ds=this.New_Form.controls.motif_ds.value;
     console.log(motif_ds)
-    this.demandeService.gettraiterrh(this.demande_id,statut, motif_ds).subscribe({
-      complete: () => {
-        console.log(motif_ds,'successfully updated !');
-      },
-      error: () => {
-          console.log(motif_ds,'oups please check !');
-        },
+    this.demandeService.gettraiterrh(this.demande_id,statut, motif_ds)
+    .subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl("/ds/dem-trait-ds")
       })
    }
 

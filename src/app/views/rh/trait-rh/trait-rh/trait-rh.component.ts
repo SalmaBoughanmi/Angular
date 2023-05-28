@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DemandesService } from 'src/app/services/demandes.service';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -15,7 +15,7 @@ export class TraitRhComponent implements OnInit{
   employe_id:any;
   isShown: boolean = false ;
 
-  constructor(private activatedRoute:ActivatedRoute, public demandeService: DemandesService ,public employeService: EmployeesService){
+  constructor(private activatedRoute:ActivatedRoute, public demandeService: DemandesService ,public employeService: EmployeesService, private router: Router){
 
     this.activatedRoute.paramMap.subscribe(
       params => {
@@ -106,26 +106,20 @@ export class TraitRhComponent implements OnInit{
     let statut:boolean=true
     let motif_rh=this.New_Form.controls.motif_rh.value;
     console.log(motif_rh)
-    this.demandeService.gettraiterrh(this.demande_id, statut, motif_rh).subscribe({
-      complete: () => {
-        console.log(motif_rh,'successfully updated !');
-      },
-      error: () => {
-          console.log(motif_rh,'oups please check !');
-        },
+    this.demandeService.gettraiterrh(this.demande_id, statut, motif_rh)
+    .subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl("/rh/dem-trait-rh")
       })
    }
    refuser(){
     let statut:boolean=false
     let motif_rh=this.New_Form.controls.motif_rh.value;
     console.log(motif_rh)
-    this.demandeService.gettraiterrh(this.demande_id,statut, motif_rh).subscribe({
-      complete: () => {
-        console.log(motif_rh,'successfully updated !');
-      },
-      error: () => {
-          console.log(motif_rh,'oups please check !');
-        },
+    this.demandeService.gettraiterrh(this.demande_id,statut, motif_rh)
+    .subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl("/rh/dem-trait-rh")
       })
    }
 

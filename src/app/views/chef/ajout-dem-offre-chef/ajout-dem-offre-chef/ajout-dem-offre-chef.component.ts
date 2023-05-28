@@ -76,6 +76,7 @@ deman.nature_contrat=this.myGroup.value.nature_contrat
 console.log(deman)
 this.demandeservice.addDemande(deman).subscribe(data=>{
   console.log(data)
+  this.router.navigateByUrl("/chef/offres-dispo-chef")
 })
 
     }

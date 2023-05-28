@@ -7,7 +7,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { DataTablesModule } from 'angular-datatables';
+// import { DataTablesModule } from 'angular-datatables';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsOffreComponent } from './views/chef/details-offre/details-offre.component';
 @NgModule({
@@ -23,7 +23,7 @@ import { DetailsOffreComponent } from './views/chef/details-offre/details-offre.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule,
+    // DataTablesModule,
     BrowserAnimationsModule
   ],
   providers: [DatePipe],

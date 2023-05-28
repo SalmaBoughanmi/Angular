@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './offres.component.html',
   styleUrls: ['./offres.component.css']
 })
-export class OffresComponent {
+export class OffresComponent implements OnInit {
   baseApiUrl: string = environment.baseApiUrl;
   offreDetails: Offre = {
     offre_id: 0,

@@ -1,9 +1,12 @@
-import { DataTablesModule } from 'angular-datatables';
+// import { DataTablesModule } from 'angular-datatables';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+// import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { AllemployeesRoutingModule } from './allemployees-routing.module';
 import { AllemployeesComponent } from './allemployees/allemployees.component';
+import { LayoutsModule } from 'src/app/layouts/layouts.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,18 +17,13 @@ import { AllemployeesComponent } from './allemployees/allemployees.component';
   imports: [
     CommonModule,
     AllemployeesRoutingModule,
-    DataTablesModule,
-    MatDialogModule
-  ],
-  providers:
-  [{
-    provide: 'allemployees',
-    useValue: AllemployeesComponent,
-},
-      {provide:MatDialogRef , useValue:{} },
+    LayoutsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    // DataTablesModule,
+    // MatDialogModule
+  ]
 
-      { provide: MAT_DIALOG_DATA, useValue: {} }
-
-],
 })
 export class AllemployeesModule { }

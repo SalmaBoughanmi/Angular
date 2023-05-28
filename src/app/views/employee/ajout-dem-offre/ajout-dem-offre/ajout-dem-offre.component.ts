@@ -77,8 +77,10 @@ deman.employe_id=this.idemployer
 deman.nb_a_exp=this.myGroup.value.nb_a_exp
 deman.nature_contrat=this.myGroup.value.nature_contrat
 console.log(deman)
-this.demandeservice.addDemande(deman).subscribe(data=>{
-  console.log(data)
+this.demandeservice.addDemande(deman)
+.subscribe(data=>{
+    console.log(data)
+    this.router.navigateByUrl("/employee/offres-dispo")
 })
 
     }
