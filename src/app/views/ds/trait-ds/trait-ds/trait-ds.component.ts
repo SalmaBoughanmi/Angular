@@ -105,7 +105,7 @@ export class TraitDsComponent  implements OnInit{
     let statut:boolean=true
     let motif_ds=this.New_Form.controls.motif_ds.value;
     console.log(motif_ds)
-    this.demandeService.gettraiterrh(this.demande_id, statut, motif_ds)
+    this.demandeService.gettraiterds(this.demande_id, statut, motif_ds)
      .subscribe(data=>{
       console.log(data)
       this.router.navigateByUrl("/ds/dem-trait-ds")
@@ -115,7 +115,7 @@ export class TraitDsComponent  implements OnInit{
     let statut:boolean=false
     let motif_ds=this.New_Form.controls.motif_ds.value;
     console.log(motif_ds)
-    this.demandeService.gettraiterrh(this.demande_id,statut, motif_ds)
+    this.demandeService.gettraiterds(this.demande_id,statut, motif_ds)
     .subscribe(data=>{
       console.log(data)
       this.router.navigateByUrl("/ds/dem-trait-ds")

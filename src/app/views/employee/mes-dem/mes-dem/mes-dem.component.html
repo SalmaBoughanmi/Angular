@@ -1,63 +1,54 @@
 <div class="main-card mb-3 card">
 	<div class="card-header">
-		<div class="card-header-title font-size-lg text-capitalize font-weight-normal">les Statuts du demandes </div>
+		<div class="card-header-title font-size-lg text-capitalize font-weight-normal">les Statuts du demandes</div>
 	</div>
 	<div class="table-responsive">
 		<table class="align-middle text-truncate mb-0 table table-borderless table-hover">
 			<thead>
 				<tr>
 					<th class="text-center">Nom</th>
-          <th class="text-center">Prénom</th>
+					<th class="text-center">Prénom</th>
 					<th class="text-center">Offre</th>
-
 					<th class="text-center">Statut demande</th>
 					<th class="text-center">Chef</th>
 					<th class="text-center">RH</th>
 					<th class="text-center">DS</th>
-
 				</tr>
 			</thead>
 			<tbody>
 				<tr *ngFor="let i of listedemande">
-					<td class="text-center" >{{i.nom}}</td>
-          <td class="text-center" >{{i.prenom}}</td>
-					<td class="text-center">{{i.fonction}}</td>
-
+					<td class="text-center">{{ i.nom }}</td>
+					<td class="text-center">{{ i.prenom }}</td>
+					<td class="text-center">{{ i.fonction }}</td>
 					<td class="text-center">
-            <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En_attente' && i.statut_rh=='En_attente';else templateName">
-              <span class="badge badge-pill badge-info">En cours</span>
-            </ng-container>
-              <ng-template #templateName>
-                <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En_attente' && i.statut_rh=='Acceptée'">
-                  <span class="badge badge-pill badge-info">En cours</span>
-                </ng-container>
-              </ng-template>
-
-              <div *ngIf=" i.statut_rh=='En attente'|| i.statut_chef=='En attente'|| i.statut_ds=='En attente'">
-                <span class="badge badge-pill badge-primary">En attente</span>
-              </div>
-
-              <ng-container *ngIf="i.statut_chef=='Refusée' && i.statut_ds=='En attente' && i.statut_rh=='En attente';else template">
-                <span class="badge badge-pill badge-danger">Refusée</span>
-              </ng-container>
-                <ng-template #template>
-                  <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='En attente' && i.statut_rh=='Refusée'else template2">
-                    <span class="badge badge-pill badge-danger">Refusée</span>
-                  </ng-container>
-                </ng-template>
-                <ng-template #template2>
-                  <ng-container *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='Refusée' && i.statut_rh=='Acceptée'">
-                    <span class="badge badge-pill badge-danger">Refusée</span>
-                  </ng-container>
-                </ng-template>
-
-
-                <div *ngIf="i.statut_chef=='Acceptée' && i.statut_ds=='Acceptée' && i.statut_rh=='Acceptée'">
-            <span class="badge badge-pill badge-success">Acceptée</span>
-
-          </div>
-
-         </td>
+            <ng-container *ngIf="i.statut_chef === 'Acceptée' && i.statut_ds === 'En attente' && i.statut_rh === 'En attente'; else templateName">
+              <span class="badge badge-pill badge-warning">En cours</span>
+						</ng-container>
+						<ng-template #templateName>
+							<ng-container *ngIf="i.statut_chef === 'Acceptée' && i.statut_ds === 'En attente' && i.statut_rh === 'Acceptée'">
+								<span class="badge badge-pill badge-warning">En cours</span>
+							</ng-container>
+						</ng-template>
+            <div *ngIf="i.statut_rh === 'En attente' && i.statut_chef === 'En attente' && i.statut_ds === 'En attente'">
+							<span class="badge badge-pill badge-info">En attente</span>
+						</div>
+            <ng-container *ngIf="i.statut_chef === 'Refusée' && i.statut_ds === 'En attente' && i.statut_rh === 'En attente'; else template">
+							<span class="badge badge-pill badge-danger">Refusée</span>
+						</ng-container>
+						<ng-template #template>
+							<ng-container *ngIf="i.statut_chef === 'Acceptée' && i.statut_ds === 'En attente' && i.statut_rh === 'Refusée'; else template2">
+								<span class="badge badge-pill badge-danger">Refusée</span>
+							</ng-container>
+						</ng-template>
+						<ng-template #template2>
+							<ng-container *ngIf="i.statut_chef === 'Acceptée' && i.statut_ds === 'Refusée' && i.statut_rh === 'Acceptée'">
+								<span class="badge badge-pill badge-danger">Refusée</span>
+							</ng-container>
+						</ng-template>
+            <div *ngIf="i.statut_chef === 'Acceptée' && i.statut_ds === 'Acceptée' && i.statut_rh === 'Acceptée'">
+							<span class="badge badge-pill badge-success">Acceptée</span>
+						</div>
+          </td>
 					<td class="text-center">
             <div *ngIf=" i.statut_chef=='Refusée'">
               <span class="badge badge-pill badge-danger">Refusée</span>
@@ -67,7 +58,6 @@
             </div>
             <div *ngIf=" i.statut_chef=='Acceptée'">
               <span class="badge badge-pill badge-success">Acceptée</span>
-
             </div>
           </td>
 					<td class="text-center">
@@ -79,7 +69,6 @@
             </div>
             <div *ngIf=" i.statut_rh=='Acceptée'">
               <span class="badge badge-pill badge-success">Acceptée</span>
-
             </div>
           </td>
         		<td class="text-center">
@@ -91,7 +80,6 @@
             </div>
             <div *ngIf=" i.statut_ds=='Acceptée'">
               <span class="badge badge-pill badge-success">Acceptée</span>
-
             </div>
           </td>
 				</tr>
